@@ -1,0 +1,54 @@
+.switch__component {
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    p {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin: 0;
+      font-weight: 500;
+
+      .checked,
+      .notChecked {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+
+      .checked {
+        background: var(--primary);
+      }
+
+      .notChecked {
+        width: 11.8px;
+        height: 11.8px;
+      }
+    }
+
+    p:first-child {
+      margin-right: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .switch__component {
+    &__inner {
+      p:first-child {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+}
+
+.lightCheckBorder {
+  border: 2px solid #fff;
+}
+
+.darkCheckBorder {
+  border: 2px solid var(--dark-1);
+}

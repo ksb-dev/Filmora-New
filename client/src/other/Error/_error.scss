@@ -1,0 +1,12 @@
+.err-msg {
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 1rem;
+  //font-weight: 500;
+}
+
+@media screen and (max-width: 786px) {
+  .err-msg {
+    //font-size: 1rem;
+  }
+}

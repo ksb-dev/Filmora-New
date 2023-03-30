@@ -1,0 +1,40 @@
+div {
+  .menu-icon {
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    //color: #fff !important;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  .menu-icon:hover {
+    color: var(--primary);
+    transition: var(--transition);
+  }
+}
+
+@media screen and (max-width: 786px) {
+  div {
+    .menu-icon {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  div {
+    .menu-icon {
+      margin-left: 0rem;
+
+      span {
+        display: none;
+      }
+    }
+  }
+}

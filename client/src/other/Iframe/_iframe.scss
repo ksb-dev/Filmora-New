@@ -1,0 +1,10 @@
+.iframe {
+  height: 100%;
+  border-radius: var(--border-radius-1);
+}
+
+@media screen and (max-width: 1024px) {
+  .iframe {
+    border-radius: 0;
+  }
+}

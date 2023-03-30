@@ -1,0 +1,10 @@
+.frame {
+  height: 100%;
+  border-radius: var(--border-radius-1);
+}
+
+@media screen and (max-width: 786px) {
+  .frame {
+    border-radius: var(--border-radius-1);
+  }
+}

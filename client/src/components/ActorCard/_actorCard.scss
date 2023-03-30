@@ -1,0 +1,140 @@
+.actorCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+  cursor: pointer;
+  border-radius: var(--border-radius-1);
+  width: max-content;
+  text-decoration: none;
+
+  &__image {
+    position: relative;
+    margin-right: 1rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    filter: var(--filter);
+
+    .img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__name-character {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
+}
+
+.actorCard:last-child {
+  padding-right: 1rem;
+}
+
+.actorCard:hover .actorCard__image {
+  filter: brightness(80%);
+  transition: var(--transition);
+}
+
+.actorCard:hover .actorCard__image .img {
+  transform: scale(1.1);
+  transition: var(--transition);
+}
+
+@media screen and (max-width: 786px) {
+  .actorCard {
+    padding-left: 0;
+
+    &__name-character {
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      .character {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .actorCard {
+    padding: 0;
+    padding-left: 0;
+    //align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+
+    &__image {
+      margin: 0 0 0.5rem 0;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+
+      .img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &__name-character {
+      width: 200px;
+
+      .name {
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .character {
+        text-align: center;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .actorCard {
+    &__image {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+
+      .img {
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &__name-character {
+      width: 125px;
+    }
+  }
+}

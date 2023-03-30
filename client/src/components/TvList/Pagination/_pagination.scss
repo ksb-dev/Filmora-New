@@ -1,0 +1,45 @@
+.tv__buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--btn,
+  &--prevBtn,
+  &--nextBtn {
+    margin: 0.5rem;
+    outline: none;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+  }
+
+  &--btn:hover,
+  &--prevBtn:hover,
+  &--nextBtn:hover {
+    filter: brightness(80%);
+    transition: var(--transition);
+  }
+}
+
+.activeBtn {
+  font-weight: 900 !important;
+  background: var(--primary);
+  color: #000;
+  pointer-events: none;
+}
+
+.disabledBtn {
+  pointer-events: none;
+  box-shadow: none;
+  background: #999;
+  color: #fff !important;
+}
+
+@media screen and (max-width: 786px) {
+  .buttons {
+    padding-bottom: 8rem;
+  }
+}

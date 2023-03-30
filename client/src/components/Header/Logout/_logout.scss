@@ -1,0 +1,60 @@
+.logout {
+  transition: var(--transition);
+
+  transform: scaleY(0);
+
+  border-radius: var(--border-radius-1);
+  box-shadow: 0 0 5px #000;
+
+  &__inner {
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--user,
+    &--logoutBtn {
+      display: flex;
+      align-items: center;
+      width: 88%;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    &--user {
+      border-top-left-radius: var(--border-radius-1);
+      border-top-right-radius: var(--border-radius-1);
+    }
+
+    &--logoutBtn {
+      cursor: pointer;
+      text-align: center;
+      background: var(--red);
+      color: #fff;
+      margin-bottom: 0;
+
+      border-bottom-left-radius: var(--border-radius-1);
+      border-bottom-right-radius: var(--border-radius-1);
+    }
+
+    &--watchlist:hover,
+    &--logoutBtn:hover {
+      filter: brightness(80%);
+      transition: var(--transition);
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .logout {
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .logout {
+    position: absolute;
+    //top: -3rem;
+  }
+}

@@ -1,0 +1,27 @@
+.load,
+.err {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2rem;
+  margin-left: 0rem;
+  min-height: 100px;
+}
+
+.load {
+  margin-top: 3rem;
+  margin-left: 2rem;
+}
+
+.backdrops {
+  padding: 4rem 0rem 2rem 0;
+  display: flex;
+  overflow-x: auto;
+  //margin-bottom: 4rem;
+  min-height: 100px;
+}
+
+@media screen and (max-width: 786px) {
+  .backdrops {
+    //margin-bottom: 2rem;
+  }
+}

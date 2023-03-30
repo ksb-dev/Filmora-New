@@ -1,0 +1,460 @@
+#root {
+  //--primary: #f5c518;
+  //--primary: goldenrod;
+  //--primary: salmon;
+  //--primary: #1db954;
+  //--primary: #01b4e4;
+  //--primary: cornflowerblue;
+  //--primary: tomato;
+  //--primary: #e50914;
+  //--secondary: #e50914;
+  //--primary: darkturquoise;
+  //--primary: darkcyan;
+  --primary: dodgerblue;
+  //--primary: deepskyblue;
+  //--primary: royalblue;
+  //--primary: mediumslateblue;
+  //--primary: darkorchid;
+  //--primary: rebeccapurple;
+  //--primary: slateblue;
+
+  --green: #1db954;
+  --gold: gold;
+  --gold-1: goldenrod;
+  --blue: #1da1f2;
+  --red: #e50914;
+  //--red: tomato;
+
+  --blue-2: #01b4e4;
+  --blue-3: #0d253f;
+  --blue-4: #061628;
+  --green-1: #90cea1;
+
+  --white-1: #fff;
+  --white-2: rgb(200, 200, 200);
+
+  --dark-1: #333333;
+  --dark-2: #222222;
+
+  --whiteAlpha-1: rgba(255, 255, 255, 0.5);
+  --whiteAlpha-2: rgba(200, 200, 200, 0.5);
+  --whiteAlpha-3: rgba(255, 255, 255, 0.75);
+  --whiteAlpha-4: rgba(200, 200, 200, 0.75);
+  --whiteAlpha-5: rgba(255, 255, 255, 0.9);
+  --whiteAlpha-6: rgba(200, 200, 200, 0.9);
+
+  --darkAplha-1: rgba(34, 34, 34, 0.5);
+  --darkAplha-2: rgba(51, 51, 51, 0.5);
+  --darkAlpha-3: rgba(34, 34, 34, 0.75);
+  --darkAplha-4: rgba(51, 51, 51, 0.75);
+  --darkAplha-5: rgba(34, 34, 34, 0.9);
+  --darkAplha-6: rgba(51, 51, 51, 0.9);
+
+  --border-radius-1: 0px;
+  --border-radius-2: 10px;
+  --border-radius-2: 15px;
+
+  --font-size-1: 1.1rem;
+  --font-size-2: 1.2rem;
+  --font-size-3: 1.3rem;
+  --font-size-4: 1.4rem;
+  --font-size-5: 1.5rem;
+
+  --font-weight-1: 400;
+  --font-weight-2: 500;
+  --font-weight-3: 600;
+  --font-weight-4: 700;
+  --font-weight-5: 900;
+
+  --transition: all 0.3s ease;
+
+  --box-shadow-1: 0 0 1px rgba(0, 0, 0, 1);
+  --box-shadow-2: 0 0 5px rgba(0, 0, 0, 0.5);
+  --box-shadow-3: 0 0 10px #000;
+  --box-shadow-4: 0px 12.5px 10px -15px #000;
+
+  --font-family-1: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-2: Verdana, Geneva, Tahoma, sans-serif;
+
+  --filter: brightness(90%);
+}
+
+.primaryBg {
+  //text-transform: uppercase;
+  font-weight: 500 !important;
+  background: var(--primary);
+  color: #000;
+}
+
+.secondaryBg {
+  background: var(--secondary);
+  color: #fff;
+}
+
+.lightBg1 {
+  background: var(--white-1);
+}
+
+.lightBg2 {
+  background: var(--white-2);
+}
+
+.darkBg1 {
+  background: var(--dark-1);
+}
+
+.darkBg2 {
+  background: var(--dark-2);
+}
+
+.lightColor1 {
+  color: var(--white-1);
+}
+
+.lightColor2 {
+  color: var(--white-2);
+}
+
+.darkColor1 {
+  color: var(--dark-2);
+}
+
+.darkColor2 {
+  color: var(--dark-2);
+}
+
+.lightAlpha1 {
+  background: var(--whiteAlpha-1);
+}
+
+.lightAlpha2 {
+  background: var(--whiteAlpha-2);
+}
+
+.lightAlpha3 {
+  background: var(--whiteAlpha-3);
+}
+
+.lightAlpha4 {
+  background: var(--whiteAlpha-4);
+}
+
+.lightAlpha5 {
+  background: var(--whiteAlpha-5);
+}
+
+.lightAlpha6 {
+  background: var(--whiteAlpha-6);
+}
+
+.darkAlpha1 {
+  background: var(--darkAplha-1);
+}
+
+.darkAlpha2 {
+  background: var(--darkAplha-2);
+}
+
+.darkAlpha3 {
+  background: var(--darkAlpha-3);
+}
+
+.darkAlpha4 {
+  background: var(--darkAlpha-4);
+}
+
+.darkAlpha5 {
+  background: var(--darkAplha-5);
+}
+
+.darkAlpha6 {
+  background: var(--darkAplha-6);
+}
+
+.lightGradient {
+  background: linear-gradient(
+    to right top,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(255, 255, 255, 0.9)
+  );
+}
+
+.darkGradient {
+  background: linear-gradient(
+    to right top,
+    rgb(34, 34, 34, 1) 20%,
+    rgb(34, 34, 34, 0.9)
+  );
+}
+
+.lightGradient1 {
+  background: linear-gradient(
+    to right top,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(255, 255, 255, 0.25)
+  );
+}
+
+.darkGradient1 {
+  background: linear-gradient(
+    to right top,
+    rgb(34, 34, 34, 1) 20%,
+    rgba(34, 34, 34, 0.25)
+  );
+}
+
+.lightGradient2 {
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.5)
+  );
+}
+
+.darkGradient2 {
+  background: linear-gradient(
+    to top,
+    rgb(34, 34, 34, 1),
+    rgba(34, 34, 34, 0.5)
+  );
+}
+
+.lightCoverGradient {
+  background: linear-gradient(
+    to right,
+    rgb(255, 255, 255) 20%,
+    rgba(255, 255, 255, 0.5)
+  );
+}
+
+.darkCoverGradient {
+  background: linear-gradient(
+    to right,
+    rgb(34, 34, 34, 1) 20%,
+    rgb(34, 34, 34, 0.5)
+  );
+}
+
+.lightBoxShadow {
+  box-shadow: 0 0 10px var(--white-1);
+}
+
+.darkBoxShadow {
+  box-shadow: 0 0 10px var(--dark-1);
+}
+
+.lightBorderBottom {
+  border-bottom: 1px solid var(--white-1) !important;
+}
+
+.darkBorderBottom {
+  border-bottom: 1px solid var(--dark-1) !important;
+}
+
+.whiteBorder {
+  box-shadow: 0 0 3px #fff;
+}
+
+.blackBorder {
+  box-shadow: 0 0 3px var(--dark-1);
+}
+
+.lightCardInfo {
+  background: rgba(250, 250, 250, 0.9);
+  color: var(--dark-1);
+  outline: 2px solid var(--primary);
+}
+
+.darkCardInfo {
+  background: rgba(17, 17, 17, 0.9);
+  color: #fff;
+  outline: 2px solid var(--primary);
+}
+
+.greenBg {
+  background-color: green;
+  color: #fff !important;
+}
+
+.orangeBg {
+  background-color: darkorange;
+  color: #fff !important;
+}
+
+.redBg {
+  background-color: red;
+  color: #fff !important;
+}
+
+.greenColor {
+  color: var(--green);
+}
+
+.orangeColor {
+  color: orange;
+}
+
+.redColor {
+  color: red;
+}
+
+.lightActive {
+  background: var(--white-2);
+  border-left: none !important;
+}
+
+.darkActive {
+  background: var(--dark-1);
+  border-left: none !important;
+}
+
+.lightCardBorder {
+  border: 5px solid #fff;
+}
+
+.darkCardBorder {
+  border: 5px solid var(--dark-1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  //box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+@import '../app';
+
+// components
+@import '../components/Header/header';
+@import '../components/Header/SmallHeader/smallHeader';
+@import '../components/Header/Logout/logout';
+@import '../components/Sort/sort';
+@import '../components/Pagination/pagination';
+@import '../components/List/list';
+@import '../components/Card/card';
+
+@import '../components/Menu/menu';
+
+@import '../components/ImageDetail/imageDetail';
+
+@import '../components/Search/search';
+@import '../components/SearchResults/searchResults';
+@import '../components/SearchModal/searchModal';
+
+@import '../components/CastBackdropsVideo/castBackdropsVideo';
+@import '../components/CastBackdropsVideo/Cast/cast';
+@import '../components/CastBackdropsVideo/Cast/Actor/actor';
+@import '../components/CastBackdropsVideo/Backdrops/backdrops';
+@import '../components/CastBackdropsVideo/Backdrops/Backdrop/backdrop';
+@import '../components/CastBackdropsVideo/Videos/videos';
+@import '../components/CastBackdropsVideo/Videos/Video/video';
+
+@import '../components/Reviews/reviews';
+
+@import '../components/ImageViewer/imageViewer';
+
+@import '../components/PlayerOne/playerOne';
+
+@import '../components/ActorCard/actorCard';
+@import '../components/BackdropCard/backdropCard';
+@import '../components/VideoCard/videoCard';
+@import '../components/ReviewCard/reviewCard';
+
+@import '../components/FullCast/fullCast';
+@import '../components/AllBackdrops/allBackdrops';
+@import '../components/AllVideos/allVideos';
+
+@import '../components/ReviewModal/reviewModal';
+
+// pages
+@import '../pages/Home/home';
+@import '../pages/Search/search';
+@import '../pages/Login/login';
+@import '../pages/Register/register';
+@import '../Pages/Watchlist/watchlist';
+@import '../pages/MovieDetail/movieDetail';
+@import '../pages/TvDetail/tvDetail';
+@import '../pages/ActorDetail/actorDetail';
+@import '../Pages/MovieCast/movieCast';
+@import '../Pages/TvCast/tvCast';
+@import '../pages/MovieBackdrops/movieBackdrops';
+@import '../pages/TvBackdrops/tvBackdrops';
+@import '../pages/MovieVideos/movieVideos';
+@import '../pages/TvVideos/tvVideos';
+
+// other
+@import '../other/Loading/loading';
+@import '../other/LoadingOne/loadingOne';
+@import '../other/Error/error';
+@import '../other/WatchlistIcon/watchlistIcon';
+@import '../other/MenuIcon/menuIcon';
+@import '../other/Options/options';
+@import '../other/Switch/switch';
+@import '../other/VideoPlayer/videoPlayer';
+@import '../other/Iframe/iframe';
+
+body::-webkit-scrollbar {
+  width: 8px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #999; /* color of the scroll thumb */
+  //border-radius: 20px; /* roundness of the scroll thumb */
+  //border: 3px solid #fff; /* creates padding around scroll thumb */
+}
+
+.scroll-1 {
+  overflow-y: auto;
+}
+/* width */
+.scroll-1::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+
+/* Track */
+.scroll-1::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.scroll-1::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 3px;
+  border: 3px solid var(--primary);
+}
+
+// ----------------------------------------
+
+// .scroll-2 {
+//   overflow-x: auto;
+// }
+// /* width */
+// .scroll-2::-webkit-scrollbar {
+//   width: 5px;
+//   height: 5px;
+// }
+
+// /* Track */
+// .scroll-2::-webkit-scrollbar-track {
+//   background: transparent;
+// }
+
+// /* Handle */
+// .scroll-2::-webkit-scrollbar-thumb {
+//   background-color: #999;
+//   border-radius: 3px;
+// }

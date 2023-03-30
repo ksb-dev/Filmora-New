@@ -1,0 +1,44 @@
+.load,
+.err {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2rem;
+  margin-left: 0rem;
+  min-height: 100px;
+}
+
+.load {
+  margin-top: 3rem;
+  margin-left: 2rem;
+}
+
+.cast {
+  padding: 4rem 0rem 2rem 0;
+  //margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  min-height: 100px;
+}
+
+@media screen and (max-width: 920px) {
+  .cast {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .cast {
+    gap: 1rem;
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    //margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .cast {
+    gap: 0rem;
+  }
+}

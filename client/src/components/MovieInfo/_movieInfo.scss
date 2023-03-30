@@ -1,0 +1,452 @@
+.movie__info {
+  position: relative;
+  margin: 0 2.5%;
+  padding-bottom: 5rem;
+
+  &__detail {
+    padding: calc(58.4px + 2rem) 0 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+
+    &__title-tagline {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        font-weight: 500;
+        font-size: 2rem;
+      }
+
+      .tagline {
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+    }
+
+    &__date-time {
+      display: flex;
+      align-items: center;
+      margin-top: 0.5rem;
+
+      .date,
+      .time {
+        color: rgb(156, 156, 156);
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+
+      .gap {
+        color: rgb(156, 156, 156);
+        padding: 0 0.5rem;
+      }
+    }
+  }
+
+  &__image__video {
+    position: relative;
+    display: flex;
+    margin-bottom: 2rem;
+
+    &--image-1 {
+      width: 300px;
+      height: 450px;
+      border-radius: var(--border-radius-1);
+      margin-right: 0.5rem;
+
+      .img {
+        width: 300px;
+        height: 450px;
+        border-radius: var(--border-radius-1);
+      }
+    }
+
+    &__rating {
+      position: absolute;
+      left: 16.25rem;
+      top: 0rem;
+      width: 33.6px;
+      height: 33.6px;
+      border-top-right-radius: var(--border-radius-1);
+      border-bottom-left-radius: var(--border-radius-1);
+      padding: 0.2rem;
+      font-weight: 500;
+
+      span {
+        font-size: 0.8rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__btn,
+    &__add__btn,
+    &__delete__btn {
+      position: absolute;
+      z-index: 1;
+      top: -1rem;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border-top-left-radius: var(--border-radius-1);
+      border-bottom-right-radius: var(--border-radius-1);
+
+      &-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -45%);
+      }
+    }
+
+    &__btn:hover,
+    &__add__btn:hover,
+    &__delete__btn:hover {
+      transform: scale(1.2);
+      border-radius: var(--border-radius-1);
+      transition: var(--transition);
+    }
+
+    &__player {
+      width: 100%;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--border-radius-1);
+    }
+  }
+
+  &__image__detail {
+    position: relative;
+
+    &--image-2,
+    &--image-3,
+    &--image-4 {
+      display: none;
+    }
+
+    &__rating {
+      display: none;
+      position: absolute;
+      top: 0rem;
+      width: 43.6px;
+      height: 43.6px;
+      border-top-right-radius: var(--border-radius-1);
+      border-bottom-left-radius: var(--border-radius-1);
+      padding: 0.2rem;
+      font-weight: 500;
+
+      span {
+        font-size: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__btn,
+    &__add__btn,
+    &__delete__btn {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      top: -1rem;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border-top-left-radius: var(--border-radius-1);
+      border-bottom-right-radius: var(--border-radius-1);
+
+      &-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -45%);
+      }
+    }
+
+    &__btn:hover,
+    &__add__btn:hover,
+    &__delete__btn:hover {
+      transform: scale(1.2);
+      border-radius: var(--border-radius-1);
+      transition: var(--transition);
+    }
+
+    &__inner {
+      &__genres {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
+
+        span {
+          margin-right: 0.5rem;
+          margin-bottom: 0.5rem;
+          padding: 0.25rem 0.75rem;
+          border-radius: 50px;
+        }
+      }
+
+      &__overview {
+        margin-bottom: 1rem;
+        line-height: 1.5rem;
+      }
+
+      &__playBtn {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .movie__info {
+    margin: 0 1rem;
+    padding-bottom: 2rem;
+
+    &__detail {
+      padding: calc(58.4px + 1rem) 0 1rem 0;
+
+      &__title-tagline {
+        margin-right: 0;
+
+        .title {
+          font-size: 1.5rem;
+        }
+
+        .tagline {
+          font-size: 1rem;
+        }
+      }
+
+      &__date-time {
+        .date,
+        .time {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    &__image__video {
+      margin-bottom: 2rem;
+
+      &--image-1 {
+        display: none;
+      }
+
+      &__btn,
+      &__add__btn,
+      &__delete__btn {
+        display: none;
+      }
+
+      &__rating {
+        display: none;
+      }
+
+      &__player {
+        height: 350px;
+        border-radius: var(--border-radius-1);
+      }
+    }
+
+    &__image__detail {
+      display: flex;
+      margin-bottom: 4rem;
+
+      &--image-2 {
+        display: flex;
+        margin-right: 1rem;
+        border-radius: var(--border-radius-1);
+        width: 250px;
+
+        .img {
+          width: 250px;
+          border-radius: var(--border-radius-1);
+        }
+      }
+
+      &__rating {
+        display: flex;
+        left: 13.15rem;
+        height: 33.6px;
+        width: 33.6px;
+
+        span {
+          font-size: 0.8rem;
+        }
+      }
+
+      &__btn,
+      &__add__btn,
+      &__delete__btn {
+        display: flex;
+        height: 40px;
+        width: 40px;
+      }
+
+      &__inner {
+        &__genres {
+          span {
+            font-size: 0.9rem;
+          }
+        }
+
+        &__overview {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .movie__info {
+    padding-bottom: 4rem;
+
+    &__image__video {
+      margin-bottom: 0rem;
+
+      &__player {
+        display: none;
+        height: 250px;
+      }
+    }
+
+    &__image__detail {
+      padding: 0;
+      margin-bottom: 0;
+      flex-direction: column;
+
+      &--image-2 {
+        display: none;
+      }
+
+      &--image-3 {
+        position: relative;
+        display: block;
+        margin-bottom: 2rem;
+        margin-right: 0;
+        width: 100%;
+        height: 300px;
+        border-radius: unset;
+        border-radius: var(--border-radius-1);
+
+        .img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: unset;
+          border-radius: var(--border-radius-1);
+        }
+      }
+
+      &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        &__genres {
+          span {
+            font-size: 0.9rem;
+          }
+        }
+
+        &__playBtn {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--primary);
+          color: #000;
+          width: 100%;
+          text-align: center;
+          padding: 0.5rem 0;
+          border-radius: 3px;
+          font-weight: 500;
+        }
+
+        &__playBtn:hover {
+          filter: brightness(80%);
+          transition: var(--transition);
+        }
+      }
+
+      &__rating {
+        left: unset;
+        right: 0rem;
+        height: 43.6px;
+        width: 43.6px;
+
+        span {
+          font-size: 1rem;
+        }
+      }
+
+      &__btn,
+      &__add__btn,
+      &__delete__btn {
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .movie__info {
+    &__image__detail {
+      &--image-3 {
+        display: none;
+      }
+
+      &--image-4 {
+        display: flex;
+        height: 200px;
+        margin-bottom: 2rem;
+        border-radius: var(--border-radius-1);
+
+        .img {
+          width: 100%;
+          height: 100%;
+          border-radius: var(--border-radius-1);
+        }
+      }
+
+      &__rating {
+        height: 33.6px;
+        width: 33.6px;
+
+        span {
+          font-size: 0.8rem;
+        }
+      }
+
+      &__btn,
+      &__add__btn,
+      &__delete__btn {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+}
+
+.genreLightBorder {
+  box-shadow: 0 0 2px #fff;
+}
+
+.genreDarkBorder {
+  box-shadow: 0 0 2px #000;
+}

@@ -1,0 +1,131 @@
+.search__results {
+  width: 100%;
+  position: absolute;
+  top: 8rem;
+
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+
+  //border-bottom-left-radius: var(--border-radius-1);
+  //border-bottom-right-radius: var(--border-radius-1);
+
+  //box-shadow: 0px 15px 10px -15px #111;
+
+  &__inner {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    text-decoration: none;
+    max-height: 60vh;
+
+    &__card {
+      cursor: pointer;
+      padding: 0.5rem;
+      display: flex;
+      border-bottom: 1px solid rgb(156, 156, 156);
+      margin-bottom: 1rem;
+      text-decoration: none;
+
+      &__image {
+        width: 50px;
+        height: 75px;
+        margin-right: 1rem;
+        border-radius: var(--border-radius-1);
+        overflow: hidden;
+        filter: var(--filter);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .img {
+          height: 75px;
+          border-radius: var(--border-radius-1);
+        }
+      }
+
+      &__title-date {
+        display: flex;
+        flex-direction: column;
+
+        span:first-child {
+          font-size: 1rem;
+          font-weight: 500;
+          margin-bottom: 0.25rem;
+          text-decoration: none;
+        }
+
+        span:last-child {
+          font-size: 0.8rem;
+          font-weight: 400;
+          color: rgb(156, 156, 156);
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__card:first-child {
+      margin-top: 2rem;
+      border-bottom: none;
+    }
+
+    &__card:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    &__card:hover &__card__image .img {
+      filter: brightness(80%);
+      transform: scale(1.5);
+      transition: var(--transition);
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .search__results {
+    &__inner {
+      width: 60vw;
+    }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .search__results {
+    &__inner {
+      width: 80vw;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .search__results {
+    &__inner {
+      max-height: 50vh;
+      &__card {
+        &__title-date {
+          span:first-child {
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+
+          span:last-child {
+            font-size: 0.8rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lightTopBorder {
+  border-top: 2px solid #fff;
+}
+
+.darkTopBorder {
+  border-top: 2px solid var(--dark-1);
+}

@@ -1,0 +1,52 @@
+.backdrop {
+  margin-right: 1rem;
+  cursor: pointer;
+  width: 276px;
+  border-radius: var(--border-radius-1);
+
+  &__image {
+    width: 276px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius-1);
+    filter: var(--filter);
+
+    .img {
+      width: 276px;
+      height: 100%;
+      border-radius: var(--border-radius-1);
+    }
+  }
+}
+
+.backdrop:hover .backdrop__image {
+  filter: brightness(80%);
+  transition: var(--transition);
+}
+
+.backdrop:hover .backdrop__image img {
+  transform: scale(1.25);
+  transition: var(--transition);
+}
+
+.backdrop:last-child {
+  margin-right: 0rem;
+}
+
+@media screen and (max-width: 786px) {
+  .backdrop {
+    width: 276px;
+
+    &__image {
+      width: 276px;
+
+      .img {
+        width: 276px;
+      }
+    }
+  }
+
+  .backdrop:last-child {
+    margin-right: 1rem;
+  }
+}

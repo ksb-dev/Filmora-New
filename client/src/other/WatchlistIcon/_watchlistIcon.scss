@@ -1,0 +1,45 @@
+.watchlist-icon {
+  position: fixed;
+  background: var(--gold);
+  z-index: 4;
+  right: 46.5%;
+  top: 5rem;
+  padding: 0.5rem;
+  color: #000;
+  box-shadow: 5px 5px 5px #000;
+  cursor: pointer;
+  //border-radius: 50px;
+
+  div {
+    display: flex;
+
+    .title {
+      display: flex;
+      align-items: center;
+      margin-right: 0.5rem;
+      font-weight: 500;
+    }
+
+    p {
+      width: 30px;
+      height: 30px;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      position: relative;
+
+      .length {
+        font-weight: 500;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.watchlist-icon:hover {
+  filter: brightness(80%);
+  transition: var(--transition);
+}

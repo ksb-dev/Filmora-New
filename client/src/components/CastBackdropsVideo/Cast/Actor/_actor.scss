@@ -1,0 +1,153 @@
+.actor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: var(--border-radius-1);
+  width: max-content;
+  text-decoration: none;
+
+  &__image {
+    position: relative;
+    margin-right: 1rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    filter: var(--filter);
+
+    .img,
+    .img-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__name-character {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .character {
+      //font-size: 0.8rem;
+    }
+  }
+}
+
+.actor:last-child {
+  padding-right: 1rem;
+}
+
+.actor:hover .actor__image {
+  filter: brightness(80%);
+  transition: var(--transition);
+}
+
+.actor:hover .actor__image .img {
+  transform: scale(1.1);
+  transition: var(--transition);
+}
+
+@media screen and (max-width: 786px) {
+  .actor {
+    padding: 0.25rem 0.5rem;
+    padding-left: 0;
+    flex-direction: column;
+
+    &__image {
+      margin: 0;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 0.5rem;
+
+      .img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    &__name-character {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        text-align: center;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      .character {
+        text-align: center;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .actor {
+    flex-direction: column;
+    padding: 0.25rem 0.5rem;
+    padding-left: 0;
+
+    &__image {
+      width: 150px;
+      height: 150px;
+
+      .img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    &__name-character {
+      width: 150px;
+
+      .name {
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      .character {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .actor {
+    &__image {
+      width: 125px;
+      height: 125px;
+
+      .img {
+        width: 125px;
+        height: 125px;
+      }
+    }
+
+    &__name-character {
+      width: 125px;
+    }
+  }
+}

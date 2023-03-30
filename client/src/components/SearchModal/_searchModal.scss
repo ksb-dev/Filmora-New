@@ -1,0 +1,24 @@
+.search__modal {
+  position: fixed;
+  top: 58px;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+
+  transition: z-index, opacity 0.3s ease;
+  //background: rgb(0, 0, 0, 0.75) !important;
+
+  &__inner {
+    // margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .search__modal {
+    display: block;
+
+    z-index: -1;
+    opacity: 0;
+  }
+}

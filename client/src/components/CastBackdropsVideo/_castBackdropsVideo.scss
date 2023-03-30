@@ -1,0 +1,107 @@
+.castBackdropVideo {
+  &__cast,
+  &__backdrops,
+  &__videos {
+    padding: 4rem 4rem 0 4rem;
+    //margin: 0.5rem 0;
+
+    &__title-1,
+    &__title-2 {
+      text-decoration: none;
+      border-left: 5px solid var(--primary);
+      padding-left: 0.5rem;
+      width: fit-content;
+      cursor: pointer;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.25rem;
+      font-weight: 500;
+
+      .length {
+        margin: 0;
+        position: relative;
+        height: 40px;
+        width: 40px;
+        background: var(--primary);
+        border-radius: 50%;
+        margin-left: 0.5rem;
+        font-weight: 500;
+
+        span {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #fff;
+          font-size: 0.9rem;
+          font-weight: 400;
+        }
+      }
+    }
+
+    &__title-2 {
+      cursor: unset;
+    }
+
+    &__title-1:hover .icon {
+      transform: translateX(40%) scale(1.25);
+      transition: var(--transition);
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .castBackdropVideo {
+    &__cast,
+    &__backdrops,
+    &__videos {
+      //margin: 0.5rem 0;
+      padding: 2rem;
+    }
+
+    // &__cast {
+    //   padding-top: 4rem;
+    // }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .castBackdropVideo {
+    &__cast,
+    &__backdrops,
+    &__videos {
+      padding: 2rem 1rem;
+    }
+
+    // &__cast {
+    //   padding-top: 4rem;
+    // }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .castBackdropVideo {
+    &__cast,
+    &__backdrops,
+    &__videos {
+      &__title-1,
+      &__title-2 {
+        .length {
+          height: 30px;
+          width: 30px;
+
+          span {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.activeCastBackdropVideo {
+  background: var(--primary) !important;
+  color: #000;
+}
