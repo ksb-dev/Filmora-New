@@ -149,6 +149,20 @@
     }
   }
 
+  .option {
+    display: block;
+    display: none;
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    padding: 0.25rem 0;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1.25rem;
+  }
+
   &__sort-switch-activeOption {
     margin: 4rem 0 0 0;
     //padding: 0rem 4.5rem 0rem 4rem;
@@ -159,8 +173,12 @@
     background: transparent !important;
 
     &--activeOption {
+      //display: none;
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 500;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.5rem 1rem;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
@@ -168,7 +186,8 @@
 
   &__movies {
     max-width: 1280px;
-    margin: 4rem 4rem 4rem 4rem;
+    //margin: 4rem 4rem 4rem 4rem;
+    margin: 4rem auto;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -329,6 +348,7 @@
           }
 
           &--activeOption {
+            display: none;
             margin: 0 0 1rem 1rem;
             text-transform: capitalize;
             letter-spacing: 1px;

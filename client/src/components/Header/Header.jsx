@@ -45,33 +45,33 @@ const Header = () => {
 
   const navigate = useNavigate()
 
-  // const [yOffset, setYOffset] = useState(window.pageYOffset)
+  const [yOffset, setYOffset] = useState(window.pageYOffset)
 
-  // const handleScroll = () => {
-  //   const currentYOffset = window.pageYOffset
+  const handleScroll = () => {
+    const currentYOffset = window.pageYOffset
 
-  //   if (yOffset < currentYOffset && yOffset > 55) {
-  //     headerRef.current.style.boxShadow = '0px 12.5px 10px -15px #000'
-  //     //headerRef.current.style.borderBottom = '2px solid var(--primary)'
-  //   }
+    if (yOffset < currentYOffset && yOffset > 55) {
+      headerRef.current.style.boxShadow = '0px 12.5px 10px -15px #000'
+      //headerRef.current.style.borderBottom = '2px solid var(--primary)'
+    }
 
-  //   if (yOffset > currentYOffset && yOffset > 55) {
-  //     headerRef.current.style.boxShadow = '0px 12.5px 10px -15px #000'
-  //     //headerRef.current.style.borderBottom = '2px solid var(--primary)'
-  //   }
+    if (yOffset > currentYOffset && yOffset > 55) {
+      headerRef.current.style.boxShadow = '0px 12.5px 10px -15px #000'
+      //headerRef.current.style.borderBottom = '2px solid var(--primary)'
+    }
 
-  //   if (yOffset > currentYOffset && yOffset < 55) {
-  //     headerRef.current.style.boxShadow = 'unset'
-  //     //headerRef.current.style.borderBottom = 'unset'
-  //   }
+    if (yOffset > currentYOffset && yOffset < 55) {
+      headerRef.current.style.boxShadow = 'unset'
+      //headerRef.current.style.borderBottom = 'unset'
+    }
 
-  //   setYOffset(currentYOffset)
-  // }
+    setYOffset(currentYOffset)
+  }
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll)
-  //   return () => window.removeEventListener('scroll', handleScroll)
-  // }, [yOffset, mode])
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [yOffset, mode])
 
   // Window Scroll Function
   window.onscroll = () => {

@@ -260,6 +260,15 @@ const List = ({ type, playerRef, playerInnerRef }) => {
               )}
             </div>
           </div>
+
+          <span
+            className={
+              'option ' +
+              (mode === true ? 'darkBg1 lightColor1' : 'lightBg1 darkColor1')
+            }
+          >
+            {sessionStorage.getItem('option')}
+          </span>
         </>
       )}
 

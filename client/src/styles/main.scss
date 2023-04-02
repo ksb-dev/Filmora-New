@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;500;700;800;900&display=swap');
+
 #root {
   //--primary: #f5c518;
   //--primary: goldenrod;
@@ -10,13 +12,13 @@
   //--secondary: #e50914;
   //--primary: darkturquoise;
   //--primary: darkcyan;
-  --primary: dodgerblue;
+  //--primary: dodgerblue;
   //--primary: deepskyblue;
   //--primary: royalblue;
   //--primary: mediumslateblue;
   //--primary: darkorchid;
   //--primary: rebeccapurple;
-  //--primary: slateblue;
+  --primary: slateblue;
 
   --green: #1db954;
   --gold: gold;
@@ -33,8 +35,8 @@
   --white-1: #fff;
   --white-2: rgb(200, 200, 200);
 
-  --dark-1: #333333;
-  --dark-2: #222222;
+  --dark-2: #333333;
+  --dark-1: #222222;
 
   --whiteAlpha-1: rgba(255, 255, 255, 0.5);
   --whiteAlpha-2: rgba(200, 200, 200, 0.5);
@@ -43,12 +45,12 @@
   --whiteAlpha-5: rgba(255, 255, 255, 0.9);
   --whiteAlpha-6: rgba(200, 200, 200, 0.9);
 
-  --darkAplha-1: rgba(34, 34, 34, 0.5);
-  --darkAplha-2: rgba(51, 51, 51, 0.5);
-  --darkAlpha-3: rgba(34, 34, 34, 0.75);
-  --darkAplha-4: rgba(51, 51, 51, 0.75);
-  --darkAplha-5: rgba(34, 34, 34, 0.9);
-  --darkAplha-6: rgba(51, 51, 51, 0.9);
+  --darkAplha-2: rgba(34, 34, 34, 0.5);
+  --darkAplha-1: rgba(51, 51, 51, 0.5);
+  --darkAlpha-4: rgba(34, 34, 34, 0.75);
+  --darkAplha-3: rgba(51, 51, 51, 0.75);
+  --darkAplha-6: rgba(34, 34, 34, 0.9);
+  --darkAplha-5: rgba(51, 51, 51, 0.9);
 
   --border-radius-1: 0px;
   --border-radius-2: 10px;
@@ -70,7 +72,7 @@
 
   --box-shadow-1: 0 0 1px rgba(0, 0, 0, 1);
   --box-shadow-2: 0 0 5px rgba(0, 0, 0, 0.5);
-  --box-shadow-3: 0 0 10px #000;
+  --box-shadow-3: 0 0 0px #000;
   --box-shadow-4: 0px 12.5px 10px -15px #000;
 
   --font-family-1: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -156,7 +158,7 @@
 }
 
 .darkAlpha3 {
-  background: var(--darkAlpha-3);
+  background: var(--darkAplha-3);
 }
 
 .darkAlpha4 {
@@ -174,16 +176,16 @@
 .lightGradient {
   background: linear-gradient(
     to right top,
-    rgba(255, 255, 255, 1) 20%,
-    rgba(255, 255, 255, 0.9)
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.75)
   );
 }
 
 .darkGradient {
   background: linear-gradient(
     to right top,
-    rgb(34, 34, 34, 1) 20%,
-    rgb(34, 34, 34, 0.9)
+    rgb(51, 51, 51, 1) 50%,
+    rgb(51, 51, 51, 0.75)
   );
 }
 
@@ -191,15 +193,15 @@
   background: linear-gradient(
     to right top,
     rgba(255, 255, 255, 1) 20%,
-    rgba(255, 255, 255, 0.25)
+    rgba(255, 255, 255, 0)
   );
 }
 
 .darkGradient1 {
   background: linear-gradient(
     to right top,
-    rgb(34, 34, 34, 1) 20%,
-    rgba(34, 34, 34, 0.25)
+    rgb(51, 51, 51, 1) 20%,
+    rgba(51, 51, 51, 0)
   );
 }
 
@@ -214,8 +216,8 @@
 .darkGradient2 {
   background: linear-gradient(
     to top,
-    rgb(34, 34, 34, 1),
-    rgba(34, 34, 34, 0.5)
+    rgb(51, 51, 51, 1),
+    rgba(51, 51, 51, 0.5)
   );
 }
 
@@ -230,8 +232,8 @@
 .darkCoverGradient {
   background: linear-gradient(
     to right,
-    rgb(34, 34, 34, 1) 20%,
-    rgb(34, 34, 34, 0.5)
+    rgb(51, 51, 51, 1) 20%,
+    rgb(51, 51, 51, 0.5)
   );
 }
 
@@ -323,7 +325,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
