@@ -1,10 +1,9 @@
 .search__component {
-  max-width: 100vw;
+  max-width: 1280px;
   width: 100%;
   min-height: 100vh;
   position: fixed;
   top: 50px;
-  left: 0;
 
   z-index: 7;
 
@@ -22,7 +21,7 @@
     align-items: center;
     margin: 0;
 
-    max-width: 100vw;
+    max-width: 1280px;
     height: min-content;
     transform: scaleY(0);
     transition: transform 0.3s ease;
@@ -30,7 +29,7 @@
     //border-bottom-left-radius: var(--border-radius-1);
     //border-bottom-right-radius: var(--border-radius-1);
 
-    box-shadow: var(--box-shadow-4);
+    //box-shadow: var(--box-shadow-4);
 
     &__one {
       display: flex;

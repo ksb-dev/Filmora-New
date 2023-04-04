@@ -1,47 +1,47 @@
-import React, { useState, useEffect, useRef } from 'react'
-import moment from 'moment'
+import React, { useState, useEffect, useRef } from "react";
+import moment from "moment";
 
 // data
-import { iconsData } from '../../data/icons'
+import { iconsData } from "../../data/icons";
 
 // Hooks
-import { useWatchlistOperations } from '../../hooks/useWatchlistOperations'
-import { useGetClassByVote } from '../../hooks/useGetClassByVote'
-import { useGetMovieInfo } from '../../hooks/useGetMovieInfo'
-import { useGetTvInfo } from '../../hooks/useGetTvInfo'
-import { useShowHide } from '../../hooks/useShowHide'
+import { useWatchlistOperations } from "../../hooks/useWatchlistOperations";
+import { useGetClassByVote } from "../../hooks/useGetClassByVote";
+import { useGetMovieInfo } from "../../hooks/useGetMovieInfo";
+import { useGetTvInfo } from "../../hooks/useGetTvInfo";
+import { useShowHide } from "../../hooks/useShowHide";
 
 // Redux
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 
 // Recat Router
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from "react-router-dom";
 
 // Context
-import { useMovieContext } from '../../context/context'
+import { useMovieContext } from "../../context/context";
 
 // APIs
-import { APIs } from '../../APIs/APIs'
+import { APIs } from "../../APIs/APIs";
 
 // Circular progress bar
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 
 const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
   const { mode, setPlayerUrl, setPlayerLoading, setPlayerError } =
-    useMovieContext()
+    useMovieContext();
   const { addMovie, deleteMovie, addShow, deleteShow } =
-    useWatchlistOperations()
-  const { getClassBg } = useGetClassByVote()
-  const { getMovieTrailer786px } = useGetMovieInfo()
-  const { getTvTrailer786px } = useGetTvInfo()
-  const { showPlayer } = useShowHide()
+    useWatchlistOperations();
+  const { getClassBg } = useGetClassByVote();
+  const { getMovieTrailer786px } = useGetMovieInfo();
+  const { getTvTrailer786px } = useGetTvInfo();
+  const { showPlayer } = useShowHide();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const infoRef = useRef(null)
-  const infoInnerRef = useRef(null)
+  const infoRef = useRef(null);
+  const infoInnerRef = useRef(null);
 
-  const [voteAverage, setVoteAverage] = useState(card.vote_average)
+  const [voteAverage, setVoteAverage] = useState(card.vote_average);
 
   useEffect(() => {
     const getRating = async () => {
@@ -49,54 +49,58 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
         `https://api.themoviedb.org/3/${type}/${card.id}?api_key=${
           import.meta.env.VITE_KEY
         }&language=en-US`
-      )
+      );
 
-      const data = await res.json()
+      const data = await res.json();
 
-      setVoteAverage(data.vote_average)
+      setVoteAverage(data.vote_average);
+    };
+
+    if (window.location.pathname.includes("/watchlist")) {
+      getRating();
     }
+  }, []);
 
-    if (window.location.pathname.includes('/watchlist')) {
-      getRating()
-    }
-  }, [])
+  let watchlist = "";
 
-  let watchlist = ''
+  let title = "";
+  let release_date = "";
 
-  let title = ''
-  let release_date = ''
-
-  if (type === 'movie') {
-    title = card.title
-    release_date = card.release_date
-    watchlist = useSelector(state => state.savedMovies.savedMovies)
+  if (type === "movie") {
+    title = card.title;
+    release_date = card.release_date;
+    watchlist = useSelector((state) => state.savedMovies.savedMovies);
   } else {
-    title = card.name
-    release_date = card.first_air_date
-    watchlist = useSelector(state => state.savedShows.savedShows)
+    title = card.name;
+    release_date = card.first_air_date;
+    watchlist = useSelector((state) => state.savedShows.savedShows);
   }
 
-  const { poster_path, backdrop_path, id, genre_ids, overview } = card
+  if (user && watchlist && watchlist.length === 0) {
+    console.log("true...");
+  }
+
+  const { poster_path, backdrop_path, id, genre_ids, overview } = card;
 
   const show = () => {
-    infoRef.current.style.opacity = '1'
+    infoRef.current.style.opacity = "1";
     setTimeout(() => {
       if (infoInnerRef && infoInnerRef.current) {
-        infoInnerRef.current.style.opacity = '1'
+        infoInnerRef.current.style.opacity = "1";
       }
-    }, 200)
-  }
+    }, 200);
+  };
 
   const hide = () => {
-    infoRef.current.style.opacity = '0'
+    infoRef.current.style.opacity = "0";
 
     setTimeout(() => {
-      infoInnerRef.current.style.opacity = '0'
-    }, 200)
-  }
+      infoInnerRef.current.style.opacity = "0";
+    }, 200);
+  };
 
   const handleAddWatchlist = () => {
-    if (type === 'movie') {
+    if (type === "movie") {
       addMovie(
         id,
         title,
@@ -106,7 +110,7 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
         voteAverage,
         genre_ids,
         overview
-      )
+      );
     } else {
       addShow(
         id,
@@ -117,17 +121,17 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
         voteAverage,
         genre_ids,
         overview
-      )
+      );
     }
-  }
+  };
 
   const handleDeleteWatchList = () => {
-    if (type === 'movie') {
-      deleteMovie(id)
+    if (type === "movie") {
+      deleteMovie(id);
     } else {
-      deleteShow(id)
+      deleteShow(id);
     }
-  }
+  };
 
   const playTrailer = () => {
     if (
@@ -136,63 +140,65 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
       playerInnerRef &&
       playerInnerRef.current
     ) {
-      showPlayer(playerRef, playerInnerRef)
+      showPlayer(playerRef, playerInnerRef);
     }
 
-    type === 'movie'
+    type === "movie"
       ? getMovieTrailer786px(id, setPlayerUrl, setPlayerLoading, setPlayerError)
-      : getTvTrailer786px(id, setPlayerUrl, setPlayerLoading, setPlayerError)
-  }
+      : getTvTrailer786px(id, setPlayerUrl, setPlayerLoading, setPlayerError);
+  };
 
   return (
-    <div className='card'>
+    <div className="card">
       <div
-        className={'card--image ' + (mode === true ? 'lightBg1' : 'darkBg2')}
+        className={"card--image " + (mode === true ? "lightBg1" : "darkBg2")}
       >
         {poster_path === null ? (
-          <span className='img-icon-1'>{iconsData.imageIcon}</span>
+          <span className="img-icon-1">{iconsData.imageIcon}</span>
         ) : (
           <img
-            className='img-1'
+            className="img-1"
             src={APIs.img_path_w342 + poster_path}
             alt={title}
-            load='lazy'
+            load="lazy"
           />
         )}
 
         {poster_path === null ? (
-          <span className='img-icon-2'>{iconsData.imageIcon}</span>
+          <span className="img-icon-2">{iconsData.imageIcon}</span>
         ) : (
           <img
-            className='img-2'
+            className="img-2"
             src={APIs.img_path_w342 + poster_path}
             alt={title}
-            load='lazy'
+            load="lazy"
           />
         )}
       </div>
 
-      {user && watchlist && watchlist.length === 0 && (
-        <p className='card__add__btn' onClick={() => handleAddWatchlist()}>
-          <span className='card__btn--icon'>{iconsData.addBookmark}</span>
+      {/* {user && watchlist && watchlist.length === 0 && (
+        <p className="card__add__btn" onClick={() => handleAddWatchlist()}>
+          <span className="card__btn--icon">{iconsData.addBookmark}</span>
         </p>
-      )}
+      )} 
 
-      {/* ADD-BUTTON */}
+   
+
+     
       {user &&
         watchlist &&
         watchlist.length > 0 &&
         watchlist.every((item, index) => item.id !== id) && (
           <p
             key={id}
-            className='card__add__btn'
+            className="card__add__btn"
             onClick={() => handleAddWatchlist()}
           >
-            <span className='card__btn--icon'>{iconsData.addBookmark}</span>
+            <span className="card__btn--icon">{iconsData.addBookmark}</span>
           </p>
         )}
 
-      {/* DELETE-BUTTON */}
+    
       {user &&
         watchlist &&
         watchlist.length > 0 &&
@@ -201,46 +207,30 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
             return (
               <p
                 key={index}
-                className='card__delete__btn'
+                className="card__delete__btn"
                 onClick={() => handleDeleteWatchList()}
-                style={{ background: 'gold' }}
+                style={{ background: "gold" }}
               >
-                <span className='card__btn--icon' style={{ color: '#000' }}>
+                <span className="card__btn--icon" style={{ color: "#000" }}>
                   {iconsData.addedBookmark}
                 </span>
               </p>
-            )
+            );
           }
         })}
 
-      {/* ADD-BUTTON (without user) */}
       {!user && (
-        <p className='card__btn ' onClick={() => navigate('/login')}>
-          <span className='card__btn--icon'>{iconsData.addBookmark}</span>
+        <p className="card__btn " onClick={() => navigate("/login")}>
+          <span className="card__btn--icon">{iconsData.addBookmark}</span>
         </p>
-      )}
-
-      {/* {window.location.pathname !== '/watchlist' && (
-        <div className={'card__rating ' + getClassBg(voteAverage)}>
-          <CircularProgressbar
-            value={voteAverage && voteAverage * 10}
-            strokeWidth={5}
-            styles={buildStyles({
-              pathColor: '#fff'
-            })}
-          />
-          <span>
-            {Number(String(voteAverage && voteAverage).substring(0, 3))}
-          </span>
-        </div>
       )} */}
 
-      <div className={'card__rating ' + getClassBg(voteAverage)}>
+      <div className={"card__rating " + getClassBg(voteAverage)}>
         <CircularProgressbar
           value={voteAverage && voteAverage * 10}
           strokeWidth={5}
           styles={buildStyles({
-            pathColor: '#fff'
+            pathColor: "#fff",
           })}
         />
         <span>
@@ -251,26 +241,41 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
       <div
         ref={infoRef}
         className={
-          'card__info ' +
+          "card__info " +
           (mode === true
-            ? 'darkAlpha5 lightColor1 darkOutline'
-            : 'lightAlpha6 darkColor1 lightOutline')
+            ? "darkAlpha5 lightColor1 darkOutline"
+            : "lightAlpha6 darkColor1 lightOutline")
         }
         onMouseOver={show}
         onMouseLeave={hide}
       >
-        <div ref={infoInnerRef} className='card__info__inner'>
-          <p className='card__info__inner--title'>
+        <div ref={infoInnerRef} className="card__info__inner">
+          <p className="card__info__inner--title">
             {title && title.length <= 35
               ? title
-              : title.substring(0, 32) + '...'}
+              : title.substring(0, 32) + "..."}
           </p>
 
-          <span className='card__info__inner--date'>
-            {release_date && moment(release_date).format('Do MMM, YYYY')}
+          <span className="card__info__inner--date">
+            {release_date && moment(release_date).format("Do MMM, YYYY")}
           </span>
 
-          <div className='card__info__inner__options'>
+          <div className="card__info__inner__options">
+            {user && watchlist && watchlist.length === 0 && (
+              <p
+                key={id}
+                className={
+                  "card__info__inner__options__add__btn " +
+                  (mode === true ? "darkOption" : "lightOption")
+                }
+                onClick={() => handleAddWatchlist()}
+              >
+                <span className="card__info__inner__options__btn--icon">
+                  {iconsData.addBookmark}
+                </span>
+              </p>
+            )}
+
             {/* ADD-BUTTON */}
             {user &&
               watchlist &&
@@ -279,12 +284,12 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
                 <p
                   key={id}
                   className={
-                    'card__info__inner__options__add__btn ' +
-                    (mode === true ? 'darkOption' : 'lightOption')
+                    "card__info__inner__options__add__btn " +
+                    (mode === true ? "darkOption" : "lightOption")
                   }
                   onClick={() => handleAddWatchlist()}
                 >
-                  <span className='card__info__inner__options__btn--icon'>
+                  <span className="card__info__inner__options__btn--icon">
                     {iconsData.addBookmark}
                   </span>
                 </p>
@@ -300,20 +305,20 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
                     <p
                       key={index}
                       className={
-                        'card__info__inner__options__delete__btn ' +
-                        (mode === true ? 'darkOption' : 'lightOption')
+                        "card__info__inner__options__delete__btn " +
+                        (mode === true ? "darkOption" : "lightOption")
                       }
                       onClick={() => handleDeleteWatchList()}
-                      style={{ background: 'var(--primary)' }}
+                      style={{ background: "var(--primary)" }}
                     >
                       <span
-                        className='card__info__inner__options__btn--icon'
-                        style={{ color: '#fff' }}
+                        className="card__info__inner__options__btn--icon"
+                        style={{ color: "#fff" }}
                       >
                         {iconsData.addedBookmark}
                       </span>
                     </p>
-                  )
+                  );
                 }
               })}
 
@@ -321,22 +326,23 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
             {!user && (
               <p
                 className={
-                  'card__info__inner__options__btn ' +
-                  (mode === true ? 'darkOption' : 'lightOption')
+                  "card__info__inner__options__btn " +
+                  (mode === true ? "darkOption" : "lightOption")
                 }
-                onClick={() => navigate('/login')}
+                onClick={() => navigate("/login")}
               >
-                <span className='card__info__inner__options__btn--icon'>
+                <span className="card__info__inner__options__btn--icon">
                   {iconsData.addBookmark}
                 </span>
               </p>
             )}
 
+            {/* Play Trailer */}
             <p
               onClick={() => playTrailer()}
               className={
-                'card__info__inner__options__play-btn ' +
-                (mode === true ? 'darkOption' : 'lightOption')
+                "card__info__inner__options__play-btn " +
+                (mode === true ? "darkOption" : "lightOption")
               }
             >
               <span>{iconsData.play1}</span>
@@ -345,8 +351,8 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
             <Link
               to={`/${type}/${id}`}
               className={
-                'card__info__inner__options--more ' +
-                (mode === true ? 'darkOption' : 'lightOption')
+                "card__info__inner__options--more " +
+                (mode === true ? "darkOption" : "lightOption")
               }
             >
               <span>{iconsData.forward}</span>
@@ -355,7 +361,7 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

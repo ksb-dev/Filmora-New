@@ -174,15 +174,179 @@ const ImageDetail = ({ id, type, playerRef, playerInnerRef }) => {
       <div
         className={
           'image__detail__cover ' +
-          (mode === true ? 'lightGradient' : 'darkGradient')
+          (mode === true ? 'lightAlpha5' : 'darkAlpha5')
         }
       >
-        <div className='image__detail__cover__wrapper'>
-          {/* ---------- One ---------- */}
-          <div className='image__detail__cover__wrapper__one'>
-            <span className='title'>
-              {type === 'movie' ? title && title : name && name}
-            </span>
+        {/* ---------- One ---------- */}
+        <div className='image__detail__cover__one'>
+          <span className='title'>
+            {type === 'movie' ? title && title : name && name}
+          </span>
+
+          <div className='date-time'>
+            {type === 'movie' ? (
+              release_date && (
+                <span className='date'>
+                  {iconsData.date}
+                  {moment(release_date).format('Do MMM, YYYY')}
+                </span>
+              )
+            ) : (
+              <></>
+            )}
+
+            {type === 'tv' ? (
+              first_air_date && (
+                <span className='date'>
+                  {iconsData.date}
+                  {moment(first_air_date).format('Do MMM, YYYY')}
+                </span>
+              )
+            ) : (
+              <></>
+            )}
+
+            {runtime && type === 'movie' ? (
+              <>
+                <span className='gap'>-</span>
+
+                <span className='time'>
+                  <>
+                    {iconsData.clock}
+                    {`${Math.floor(runtime / 60)}` > 0 &&
+                      `${Math.floor(runtime / 60)}h`}
+                    {` ${runtime % 60}`}m
+                  </>
+                </span>
+              </>
+            ) : (
+              <></>
+            )}
+          </div>
+        </div>
+
+        {/* ---------- Two ---------- */}
+        <div className='image__detail__cover__two'>
+          <div className='image__detail__cover__two__image'>
+            {poster_path === null ? (
+              <span
+                className={
+                  'img-icon-1 ' + (mode === true ? 'lightBg1' : 'darkBg2')
+                }
+              >
+                {iconsData.imageIcon}
+              </span>
+            ) : (
+              <img
+                className={'img-1 ' + (mode === true ? 'lightBg1' : 'darkBg2')}
+                src={APIs.img_path_w342 + poster_path}
+                alt='img'
+                load='lazy'
+              />
+            )}
+
+            {backdrop_path === null ? (
+              <span
+                className={
+                  'img-icon-2 ' + (mode === true ? 'lightBg1' : 'darkBg2')
+                }
+              >
+                {iconsData.imageIcon}
+              </span>
+            ) : (
+              <img
+                className={'img-2 ' + (mode === true ? 'lightBg1' : 'darkBg2')}
+                src={APIs.img_path_w780 + backdrop_path}
+                alt='img'
+                load='lazy'
+              />
+            )}
+
+            <div className={'rating ' + getClassBg(vote_average)}>
+              <CircularProgressBar vote_average={vote_average} />
+            </div>
+
+            {user && watchlist && watchlist.length === 0 && (
+              <p className='add-btn' onClick={() => handleAddMovie()}>
+                <span className='add-btn-icon'>{iconsData.addBookmark1}</span>
+              </p>
+            )}
+
+            {user &&
+              watchlist &&
+              watchlist.length > 0 &&
+              watchlist.every(item => item.id !== Number(id)) && (
+                <p
+                  key={id}
+                  className='add-btn'
+                  onClick={() => handleAddMovie()}
+                >
+                  <span className='add-btn-icon'>{iconsData.addBookmark1}</span>
+                </p>
+              )}
+
+            {user &&
+              watchlist &&
+              watchlist.length > 0 &&
+              watchlist.map((item, index) => {
+                if (item.id === Number(id)) {
+                  return (
+                    <p
+                      key={index}
+                      className='delete-btn'
+                      onClick={() => handleDeleteMovie()}
+                      style={{ background: 'var(--primary)' }}
+                    >
+                      <span
+                        className='delete-btn-icon'
+                        style={{ color: '#fff' }}
+                      >
+                        {iconsData.addedBookmark1}
+                      </span>
+                    </p>
+                  )
+                }
+              })}
+
+            {!user && (
+              <p className='btn ' onClick={() => navigate('/login')}>
+                <span className='btn-icon'>{iconsData.addBookmark1}</span>
+              </p>
+            )}
+          </div>
+
+          <div className='image__detail__cover__two__detail'>
+            <div className='title-tagline'>
+              {type === 'movie' && title && (
+                <span className='title-1'>{title}</span>
+              )}
+
+              {type === 'tv' && name && <span className='title-2'>{name}</span>}
+
+              {type === 'movie' && tagline && (
+                <span className='tagline'>
+                  {iconsData.LeftQuote}
+                  {' ' + tagline + ' '}
+                  {iconsData.RightQuote}
+                </span>
+              )}
+            </div>
+
+            <div className='genres'>
+              {genres &&
+                Array.from(genres).length > 0 &&
+                Array.from(genres).map((genre, index) => (
+                  <span key={index}>
+                    {genre.icon1}
+                    {genre.genre}
+                  </span>
+                ))}
+            </div>
+
+            <div className='overview'>
+              <span className='title'>Overview</span>
+              <span>{overview && overview}</span>
+            </div>
 
             <div className='date-time'>
               {type === 'movie' ? (
@@ -224,184 +388,10 @@ const ImageDetail = ({ id, type, playerRef, playerInnerRef }) => {
                 <></>
               )}
             </div>
-          </div>
 
-          {/* ---------- Two ---------- */}
-          <div className='image__detail__cover__wrapper__two'>
-            <div className='image__detail__cover__wrapper__two__image'>
-              {poster_path === null ? (
-                <span
-                  className={
-                    'img-icon-1 ' + (mode === true ? 'lightBg1' : 'darkBg2')
-                  }
-                >
-                  {iconsData.imageIcon}
-                </span>
-              ) : (
-                <img
-                  className={
-                    'img-1 ' + (mode === true ? 'lightBg1' : 'darkBg2')
-                  }
-                  src={APIs.img_path_w342 + poster_path}
-                  alt='img'
-                  load='lazy'
-                />
-              )}
-
-              {backdrop_path === null ? (
-                <span
-                  className={
-                    'img-icon-2 ' + (mode === true ? 'lightBg1' : 'darkBg2')
-                  }
-                >
-                  {iconsData.imageIcon}
-                </span>
-              ) : (
-                <img
-                  className={
-                    'img-2 ' + (mode === true ? 'lightBg1' : 'darkBg2')
-                  }
-                  src={APIs.img_path_w780 + backdrop_path}
-                  alt='img'
-                  load='lazy'
-                />
-              )}
-
-              <div className={'rating ' + getClassBg(vote_average)}>
-                <CircularProgressBar vote_average={vote_average} />
-              </div>
-
-              {user && watchlist && watchlist.length === 0 && (
-                <p className='add-btn' onClick={() => handleAddMovie()}>
-                  <span className='add-btn-icon'>{iconsData.addBookmark1}</span>
-                </p>
-              )}
-
-              {user &&
-                watchlist &&
-                watchlist.length > 0 &&
-                watchlist.every(item => item.id !== Number(id)) && (
-                  <p
-                    key={id}
-                    className='add-btn'
-                    onClick={() => handleAddMovie()}
-                  >
-                    <span className='add-btn-icon'>
-                      {iconsData.addBookmark1}
-                    </span>
-                  </p>
-                )}
-
-              {user &&
-                watchlist &&
-                watchlist.length > 0 &&
-                watchlist.map((item, index) => {
-                  if (item.id === Number(id)) {
-                    return (
-                      <p
-                        key={index}
-                        className='delete-btn'
-                        onClick={() => handleDeleteMovie()}
-                        style={{ background: 'var(--primary)' }}
-                      >
-                        <span
-                          className='delete-btn-icon'
-                          style={{ color: '#fff' }}
-                        >
-                          {iconsData.addedBookmark1}
-                        </span>
-                      </p>
-                    )
-                  }
-                })}
-
-              {!user && (
-                <p className='btn ' onClick={() => navigate('/login')}>
-                  <span className='btn-icon'>{iconsData.addBookmark1}</span>
-                </p>
-              )}
-            </div>
-
-            <div className='image__detail__cover__wrapper__two__detail'>
-              <div className='title-tagline'>
-                {type === 'movie' && title && (
-                  <span className='title-1'>{title}</span>
-                )}
-
-                {type === 'tv' && name && (
-                  <span className='title-2'>{name}</span>
-                )}
-
-                {type === 'movie' && tagline && (
-                  <span className='tagline'>
-                    {iconsData.LeftQuote}
-                    {' ' + tagline + ' '}
-                    {iconsData.RightQuote}
-                  </span>
-                )}
-              </div>
-
-              <div className='genres'>
-                {genres &&
-                  Array.from(genres).length > 0 &&
-                  Array.from(genres).map((genre, index) => (
-                    <span key={index}>
-                      {genre.icon1}
-                      {genre.genre}
-                    </span>
-                  ))}
-              </div>
-
-              <div className='overview'>
-                <span className='title'>Overview</span>
-                <span>{overview && overview}</span>
-              </div>
-
-              <div className='date-time'>
-                {type === 'movie' ? (
-                  release_date && (
-                    <span className='date'>
-                      {iconsData.date}
-                      {moment(release_date).format('Do MMM, YYYY')}
-                    </span>
-                  )
-                ) : (
-                  <></>
-                )}
-
-                {type === 'tv' ? (
-                  first_air_date && (
-                    <span className='date'>
-                      {iconsData.date}
-                      {moment(first_air_date).format('Do MMM, YYYY')}
-                    </span>
-                  )
-                ) : (
-                  <></>
-                )}
-
-                {runtime && type === 'movie' ? (
-                  <>
-                    <span className='gap'>-</span>
-
-                    <span className='time'>
-                      <>
-                        {iconsData.clock}
-                        {`${Math.floor(runtime / 60)}` > 0 &&
-                          `${Math.floor(runtime / 60)}h`}
-                        {` ${runtime % 60}`}m
-                      </>
-                    </span>
-                  </>
-                ) : (
-                  <></>
-                )}
-              </div>
-
-              <span className='play-btn-1' onClick={() => playTrailer()}>
-                {iconsData.play} Watch Trailer
-              </span>
-            </div>
+            <span className='play-btn-1' onClick={() => playTrailer()}>
+              {iconsData.play} Watch Trailer
+            </span>
           </div>
         </div>
       </div>

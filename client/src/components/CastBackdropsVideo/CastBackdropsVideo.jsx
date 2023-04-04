@@ -63,7 +63,7 @@ const CastBackdropsVideo = ({ id, type, playerRef, playerInnerRef }) => {
     <div
       className={
         'castBackdropVideo ' +
-        (mode === true ? 'lightBg1 darkColor1' : 'darkBg2 lightColor1')
+        (mode === true ? 'lightBg2 darkColor1' : 'darkBg1 lightColor1')
       }
     >
       <div
