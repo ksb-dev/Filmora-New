@@ -39,35 +39,35 @@ export const APIs = {
   }&sort_by=vote_count.desc&adult = false`,
 
   no_image_url:
-    "https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png",
+    'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png',
 
-  img_path: "https://image.tmdb.org/t/p/w1280",
-  img_path_original: "https://image.tmdb.org/t/p/original",
+  img_path: 'https://image.tmdb.org/t/p/w1280',
+  img_path_original: 'https://image.tmdb.org/t/p/original',
 
   // Backdrops
-  img_path_w300: "https://image.tmdb.org/t/p/w780",
+  img_path_w300: 'https://image.tmdb.org/t/p/w780',
   //img_path_w300: 'https://image.tmdb.org/t/p/original',
-  img_path_w780: "https://image.tmdb.org/t/p/w780",
+  img_path_w780: 'https://image.tmdb.org/t/p/w780',
   //img_path_w780: 'https://image.tmdb.org/t/p/original',
 
   // Posters
-  img_path_w92: "https://image.tmdb.org/t/p/w92",
+  img_path_w92: 'https://image.tmdb.org/t/p/w92',
   //img_path_w92: 'https://image.tmdb.org/t/p/original',
-  img_path_w154: "https://image.tmdb.org/t/p/w154",
+  img_path_w154: 'https://image.tmdb.org/t/p/w154',
   //img_path_w154: 'https://image.tmdb.org/t/p/original',
-  img_path_w342: "https://image.tmdb.org/t/p/w342",
+  img_path_w342: 'https://image.tmdb.org/t/p/w342',
   //img_path_w342: 'https://image.tmdb.org/t/p/original',
-  img_path_w500: "https://image.tmdb.org/t/p/w500",
+  img_path_w500: 'https://image.tmdb.org/t/p/w500',
   //img_path_w350: 'https://image.tmdb.org/t/p/original',
 
   // Profile
-  img_path_w45: "https://image.tmdb.org/t/p/w45",
+  img_path_w45: 'https://image.tmdb.org/t/p/w45',
   //img_path_w45: 'https://image.tmdb.org/t/p/original',
-  img_path_h632: "https://image.tmdb.org/t/p/h632",
+  img_path_h632: 'https://image.tmdb.org/t/p/h632',
   //img_path_h632: 'https://image.tmdb.org/t/p/original',
 
   // Posters & profiles
-  img_path_w185: "https://image.tmdb.org/t/p/w342",
+  img_path_w185: 'https://image.tmdb.org/t/p/w342',
   //img_path_w185: 'https://image.tmdb.org/t/p/original',
 
   imdb_url: `https://www/imdb.com/title/`,
@@ -93,14 +93,14 @@ export const APIs = {
   // add_show_url: `/url/api/v1/filmora/shows`,
   // delete_show_url: `/url/api/v1/filmora/shows/`,
 
-  login_url: `https://tmdb-back-fgkb.onrender.com/api/v1/filmora/auth/login`,
-  register_url: `https://tmdb-back-fgkb.onrender.com/api/v1/filmora/auth/register`,
+  login_url: `/api/v1/filmora/auth/login`,
+  register_url: `/api/v1/filmora/auth/register`,
 
-  get_movies_url: `https://tmdb-back-fgkb.onrender.com/api/v1/filmora/movies`,
-  add_movie_url: `https://tmdb-back-fgkb.onrender.com/api/v1/filmora/movies`,
-  delete_movie_url: `https://tmdb-back-fgkb.onrender.com/api/v1/filmora/movies/`,
+  get_movies_url: `/api/v1/filmora/movies`,
+  add_movie_url: `/api/v1/filmora/movies`,
+  delete_movie_url: `/api/v1/filmora/movies/`,
 
-  get_shows_url: `https://tmdb-back-fgkb.onrender.com/api/v1/filmora/shows`,
-  add_show_url: `https://tmdb-back-fgkb.onrender.com/api/v1/filmora/shows`,
-  delete_show_url: `https://tmdb-back-fgkb.onrender.com/api/v1/filmora/shows/`,
-};
+  get_shows_url: `/api/v1/filmora/shows`,
+  add_show_url: `/api/v1/filmora/shows`,
+  delete_show_url: `/api/v1/filmora/shows/`
+}
