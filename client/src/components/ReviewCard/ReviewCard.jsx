@@ -73,8 +73,8 @@ const ReviewCard = ({ review }) => {
             <span
               ref={readMoreRef}
               style={{
-                color: 'var(--blue)',
-                fontWeight: '400',
+                color: 'var(--primary)',
+                fontWeight: '500',
                 cursor: 'pointer'
               }}
               onClick={() => showReviewModal()}

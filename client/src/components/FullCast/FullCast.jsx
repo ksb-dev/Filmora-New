@@ -63,8 +63,8 @@ const FullCast = () => {
                 className={
                   'full__cast__detail__image__cover ' +
                   (mode === true
-                    ? 'lightCoverGradient darkColor1'
-                    : 'darkCoverGradient lightColor1')
+                    ? 'lightAlpha5 darkColor1'
+                    : 'darkAlpha5 lightColor1')
                 }
               >
                 <span className='full__cast__detail__image__cover--title'>

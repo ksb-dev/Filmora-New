@@ -71,7 +71,7 @@ const AllVideos = ({ playerRef, playerInnerRef }) => {
               <div
                 className={
                   'all__videos__detail__image__cover ' +
-                  (mode === true ? 'lightCoverGradient' : 'darkCoverGradient')
+                  (mode === true ? 'lightAlpha5' : 'darkAlpha5')
                 }
               >
                 <span

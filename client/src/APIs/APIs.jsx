@@ -91,7 +91,7 @@ export const APIs = {
 
   // get_shows_url: `/url/api/v1/filmora/shows`,
   // add_show_url: `/url/api/v1/filmora/shows`,
-  // delete_show_url: `/url/api/v1/filmora/shows/`,
+  // delete_show_url: `/url/api/v1/filmora/shows/`
 
   login_url: `/api/v1/filmora/auth/login`,
   register_url: `/api/v1/filmora/auth/register`,

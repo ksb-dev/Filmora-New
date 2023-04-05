@@ -44,12 +44,12 @@ const PlayerOne = ({ playerRef, playerInnerRef }) => {
       ref={playerRef}
       className={
         'player ' +
-        (mode === true ? 'lightAlpha6 darkColor1' : 'darkAlpha6 lightColor1')
+        (mode === true ? 'lightAlpha5 darkColor1' : 'darkAlpha5 lightColor1')
       }
     >
       <div
         ref={playerInnerRef}
-        className={'player__inner ' + (mode === true ? 'lightBg2' : 'darkBg1')}
+        className={'player__inner ' + (mode === true ? 'lightBg1' : 'darkBg2')}
       >
         {playerLoading && (
           <div className='player__inner__loading'>

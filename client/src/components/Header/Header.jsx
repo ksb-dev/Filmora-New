@@ -21,6 +21,9 @@ import MenuIcon from '../../other/MenuIcon/MenuIcon'
 // hooks
 import { useShowHide } from '../../hooks/useShowHide'
 
+// icons
+import { GiFilmSpool } from 'react-icons/gi'
+
 const Header = () => {
   const {
     mode,
@@ -45,33 +48,33 @@ const Header = () => {
 
   const navigate = useNavigate()
 
-  const [yOffset, setYOffset] = useState(window.pageYOffset)
+  // const [yOffset, setYOffset] = useState(window.pageYOffset)
 
-  const handleScroll = () => {
-    const currentYOffset = window.pageYOffset
+  // const handleScroll = () => {
+  //   const currentYOffset = window.pageYOffset
 
-    if (yOffset < currentYOffset && yOffset > 55) {
-      headerRef.current.style.boxShadow = '0px 12.5px 10px -15px #000'
-      //headerRef.current.style.borderBottom = '2px solid var(--primary)'
-    }
+  //   if (yOffset < currentYOffset && yOffset > 55) {
+  //     headerRef.current.style.boxShadow = '0px 12.5px 10px -15px #000'
+  //     //headerRef.current.style.borderBottom = '2px solid var(--primary)'
+  //   }
 
-    if (yOffset > currentYOffset && yOffset > 55) {
-      headerRef.current.style.boxShadow = '0px 12.5px 10px -15px #000'
-      //headerRef.current.style.borderBottom = '2px solid var(--primary)'
-    }
+  //   if (yOffset > currentYOffset && yOffset > 55) {
+  //     headerRef.current.style.boxShadow = '0px 12.5px 10px -15px #000'
+  //     //headerRef.current.style.borderBottom = '2px solid var(--primary)'
+  //   }
 
-    if (yOffset > currentYOffset && yOffset < 55) {
-      headerRef.current.style.boxShadow = 'unset'
-      //headerRef.current.style.borderBottom = 'unset'
-    }
+  //   if (yOffset > currentYOffset && yOffset < 55) {
+  //     headerRef.current.style.boxShadow = 'unset'
+  //     //headerRef.current.style.borderBottom = 'unset'
+  //   }
 
-    setYOffset(currentYOffset)
-  }
+  //   setYOffset(currentYOffset)
+  // }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [yOffset, mode])
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // }, [yOffset, mode])
 
   // Window Scroll Function
   window.onscroll = () => {
@@ -116,7 +119,11 @@ const Header = () => {
               handleTitleClick()
             }}
           >
-            TMDb
+            <span className='first'>Film</span>
+            <span className='icon'>
+              <GiFilmSpool />
+            </span>
+            <span className='last'>ra</span>
           </p>
 
           <div className='header-menu-icon'>

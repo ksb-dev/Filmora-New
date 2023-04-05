@@ -72,7 +72,7 @@ const AllBackdrops = () => {
               <div
                 className={
                   'all__backdrops__detail__image__cover ' +
-                  (mode === true ? 'lightCoverGradient' : 'darkCoverGradient')
+                  (mode === true ? 'lightAlpha5' : 'darkAlpha5')
                 }
               >
                 <span

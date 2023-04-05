@@ -64,8 +64,8 @@
         height: inherit;
 
         &__detail {
-          width: 500px;
-          margin: 0 0 2rem 2rem;
+          width: 750px;
+          margin: 0 1rem;
           border-radius: var(--border-radius-1);
 
           .title {
@@ -80,7 +80,7 @@
           .overview {
             margin: 0.5rem 0 0 0;
             font-weight: 400;
-            line-height: 1.5rem;
+            line-height: 1.8rem;
           }
         }
 
@@ -97,60 +97,55 @@
       }
     }
 
-    &__buttons {
+    .prevBtn,
+    .nextBtn {
       position: absolute;
-      right: 2rem;
-      bottom: 2rem;
-      display: flex;
-      align-items: center;
-      transition: var(--transition);
+      left: 1rem;
+      cursor: pointer;
+      border-radius: 50%;
+      margin: 0;
+      width: 30px;
+      height: 30px;
+      background: rgb(0, 0, 0, 0.75);
+      color: #fff;
 
-      p {
-        cursor: pointer;
-        border-radius: 50%;
-        position: relative;
-        margin: 0;
-        width: 50px;
-        height: 50px;
-        background: rgb(0, 0, 0, 0.75);
-        color: #fff;
-
-        span {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -45%);
-        }
-      }
-
-      .length {
-        cursor: unset;
-        border-radius: 50px;
-        width: 82px;
-        height: 82px;
-        margin: 0 0.5rem;
-
-        span {
-          font-size: 0.8rem;
-          font-weight: 500;
-        }
-      }
-
-      p:first-child:hover,
-      p:last-child:hover {
-        border-radius: var(--border-radius-1);
-        transition: var(--transition);
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -45%);
       }
     }
 
-    &__cover:hover {
-      filter: brightness(90%);
-      transition: var(--transition);
+    .nextBtn {
+      left: unset;
+      right: 1rem;
+    }
+
+    .length {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      margin: 0;
+      //min-width: 70.45px;
+      //background: rgb(0, 0, 0, 0.75);
+      color: rgb(150, 150, 150);
+      text-align: center;
+      //padding: 0.5rem;
+      font-weight: 700;
+
+      // span {
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 50%;
+      //   transform: translate(-50%, -45%);
+      // }
     }
   }
 
   &__sort-switch-activeOption {
-    margin: 4rem 0 0 0;
+    margin: 6rem 0 0 0;
     //padding: 0rem 4.5rem 0rem 4rem;
     display: flex;
     align-items: center;
@@ -159,10 +154,13 @@
     background: transparent !important;
 
     &--activeOption {
-      font-size: 1rem;
+      font-size: 1.25rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 5px;
+      //background: var(--primary);
+      //color: #fff;
+      padding: 0.5rem 1rem;
     }
   }
 
@@ -193,6 +191,16 @@
 
       &__cover {
         border-radius: 0px;
+
+        &__inner {
+          &__detail {
+            margin: 0 0 2rem 2rem;
+          }
+        }
+      }
+
+      &__buttons {
+        right: 2rem;
       }
     }
 
@@ -331,7 +339,7 @@
           &--activeOption {
             margin: 0 0 1rem 1rem;
             text-transform: capitalize;
-            letter-spacing: 1px;
+
             font-size: 1rem;
             font-family: var(--font-family-1);
             border-radius: var(--border-radius-1);
@@ -339,28 +347,11 @@
         }
       }
 
-      &__buttons {
-        width: 100%;
-        right: unset;
-        bottom: 42.5%;
-        justify-content: space-between;
-
-        p:first-child {
-          margin-left: 1rem;
-        }
-
-        p:last-child {
-          margin-right: 1rem;
-        }
-
-        p {
-          width: 30px;
-          height: 30px;
-        }
-
-        .length {
-          display: none;
-        }
+      .length {
+        font-weight: 400;
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        min-width: 43.7px;
       }
     }
 
@@ -369,7 +360,7 @@
     }
 
     &__movies {
-      margin: 2rem 1rem 2rem 1rem;
+      margin: 4rem 1rem 2rem 1rem;
 
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 1rem 0.75rem;

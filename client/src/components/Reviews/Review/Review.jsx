@@ -62,8 +62,8 @@ const Review = ({ review }) => {
                   </span>
                   <span
                     style={{
-                      color: 'var(--blue)',
-                      fontWeight: '400',
+                      color: 'var(--primary)',
+                      fontWeight: '500',
                       cursor: 'pointer'
                     }}
                     onClick={() => setShow(!show)}
@@ -76,8 +76,8 @@ const Review = ({ review }) => {
                   <span className='content'>{content}</span>
                   <span
                     style={{
-                      color: 'var(--blue)',
-                      fontWeight: '400',
+                      color: 'var(--primary)',
+                      fontWeight: '500',
                       cursor: 'pointer'
                     }}
                     onClick={() => setShow(!show)}
@@ -93,48 +93,6 @@ const Review = ({ review }) => {
         ) : (
           <></>
         )}
-
-        {/* {content ? (
-          <p>
-            {show ? (
-              <>
-                <span className='content'>{content}</span>
-                <span
-                  style={{
-                    color: 'var(--blue)',
-                    fontWeight: '500',
-                    cursor: 'pointer'
-                  }}
-                  onClick={() => setShow(!show)}
-                >
-                  Hide more
-                </span>
-              </>
-            ) : (
-              <>
-                {content.substring > 100 ? (
-                  <>
-                    <span className='content'>{content.substring(0, 100)}</span>
-                    <span
-                      style={{
-                        color: 'var(--blue)',
-                        fontWeight: '500',
-                        cursor: 'pointer'
-                      }}
-                      onClick={() => setShow(!show)}
-                    >
-                      Read more
-                    </span>
-                  </>
-                ) : (
-                  <span className='content'>{content}</span>
-                )}
-              </>
-            )}
-          </p>
-        ) : (
-          <></>
-        )} */}
       </div>
     </div>
   )

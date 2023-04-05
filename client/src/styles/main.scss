@@ -11,12 +11,15 @@
   //--primary: darkturquoise;
   //--primary: darkcyan;
   //--primary: dodgerblue;
-  //--primary: deepskyblue;
+  --primary: deepskyblue;
   //--primary: royalblue;
-  --primary: mediumslateblue;
+  //--primary: mediumslateblue;
   //--primary: darkorchid;
   //--primary: rebeccapurple;
   //--primary: slateblue;
+  //--primary: orangered;
+  //--primary: orange;
+  //--primary: olivedrab;
 
   --green: #1db954;
   --gold: gold;
@@ -189,17 +192,17 @@
 
 .lightGradient1 {
   background: linear-gradient(
-    to right top,
+    to top,
     rgba(255, 255, 255, 1) 20%,
-    rgba(255, 255, 255, 0)
+    rgba(255, 255, 255, 0.25)
   );
 }
 
 .darkGradient1 {
   background: linear-gradient(
-    to right top,
+    to top,
     rgb(34, 34, 34, 1) 20%,
-    rgba(34, 34, 34, 0)
+    rgba(34, 34, 34, 0.25)
   );
 }
 
@@ -221,17 +224,17 @@
 
 .lightCoverGradient {
   background: linear-gradient(
-    to right,
+    to top,
     rgb(255, 255, 255) 20%,
-    rgba(255, 255, 255, 0.5)
+    rgba(255, 255, 255, 0.75)
   );
 }
 
 .darkCoverGradient {
   background: linear-gradient(
-    to right,
+    to top,
     rgb(34, 34, 34, 1) 20%,
-    rgb(34, 34, 34, 0.5)
+    rgb(34, 34, 34, 0.75)
   );
 }
 
@@ -329,6 +332,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   user-select: none;
   overflow-x: hidden;
+
+  letter-spacing: 0.5px !important;
 }
 
 @import '../app';

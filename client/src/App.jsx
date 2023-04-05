@@ -45,7 +45,7 @@ const App = () => {
   const { mode } = useMovieContext()
 
   return (
-    <div className={'app ' + (mode === true ? 'darkBg1' : 'lightBg1')}>
+    <div className={'app ' + (mode === true ? 'lightBg1' : 'darkBg2')}>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />

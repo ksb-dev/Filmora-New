@@ -109,7 +109,7 @@
 
           .tagline {
             display: inline-block;
-            letter-spacing: 1px;
+
             font-weight: 400;
             font-size: 1rem;
             margin-bottom: 0.5rem;
@@ -140,7 +140,7 @@
         }
 
         .overview {
-          line-height: 1.5rem;
+          line-height: 1.8rem;
           margin-bottom: 2rem;
           display: flex;
           flex-direction: column;
@@ -182,11 +182,11 @@
           padding: 0.5rem 1rem;
           padding-left: 0.5rem;
           font-weight: 500;
-          border-radius: 25px;
+          //border-radius: 25px;
         }
 
         .play-btn-1:hover {
-          border-radius: var(--border-radius-1);
+          border-radius: 25px;
           transition: var(--transition);
         }
       }

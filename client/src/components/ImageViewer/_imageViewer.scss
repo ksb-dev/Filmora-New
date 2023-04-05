@@ -21,7 +21,7 @@
     border-radius: var(--border-radius-1);
     width: 1000px;
     height: 570.5px;
-    box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 100px #555;
 
     //filter: var(--filter);
 
@@ -84,6 +84,12 @@
           left: 50%;
           transform: translate(-50%, -45%);
         }
+      }
+
+      p:first-child:hover,
+      p:last-child:hover {
+        border-radius: 0px;
+        transition: var(--transition);
       }
     }
   }
