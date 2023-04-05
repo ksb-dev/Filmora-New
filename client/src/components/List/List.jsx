@@ -232,7 +232,7 @@ const List = ({ type, playerRef, playerInnerRef }) => {
                     'list__wall__cover__inner--activeOption '
                     // +
                     // (mode === true
-                    //   ? 'darkBg1 lightColor1'
+                    //   ? 'lightBg2 darkColor1'
                     //   : 'lightBg1 darkColor1')
                   }
                 >
