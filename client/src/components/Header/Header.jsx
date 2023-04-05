@@ -106,7 +106,7 @@ const Header = () => {
     <div
       className={
         'header ' +
-        (mode === true ? 'lightBg1 darkColor2 ' : 'darkBg2 lightColor1 ')
+        (mode === true ? 'darkBg2 lightColor1 ' : 'lightBg1 darkColor1 ')
       }
       ref={headerRef}
     >
@@ -120,7 +120,11 @@ const Header = () => {
             }}
           >
             <span className='first'>Film</span>
-            <span className='icon'>
+            <span
+              className={
+                'icon ' + (mode === true ? 'lightColor1' : 'darkColor1')
+              }
+            >
               <GiFilmSpool />
             </span>
             <span className='last'>ra</span>
@@ -141,7 +145,7 @@ const Header = () => {
             <Link
               to='/'
               className={
-                'home-link ' + (mode === true ? 'darkColor2' : 'lightColor1')
+                'home-link ' + (mode === true ? 'lightColor1' : 'darkColor1')
               }
             >
               <span>{iconsData.homeOutlined}</span> <span>Home</span>
@@ -157,7 +161,7 @@ const Header = () => {
               to='/watchlist'
               className={
                 'watchlist-link ' +
-                (mode === true ? 'darkColor2' : 'lightColor1')
+                (mode === true ? 'lightColor1' : 'darkColor1')
               }
             >
               <span>{iconsData.outlineBookmark}</span> <span>Watchlist</span>
@@ -185,7 +189,7 @@ const Header = () => {
               <Link
                 to='/login'
                 className={
-                  'login-link ' + (mode === true ? 'darkColor2' : 'lightColor1')
+                  'login-link ' + (mode === true ? 'lightColor1' : 'darkColor1')
                 }
               >
                 <span>{iconsData.loginOutlined}</span> <span>Login</span>

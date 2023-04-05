@@ -12,7 +12,7 @@ const MenuIcon = ({ menuIconRef }) => {
   return (
     <p
       ref={menuIconRef}
-      className={'menu-icon ' + (mode === true ? 'darkColor1' : 'lightColor1')}
+      className={'menu-icon ' + (mode === true ? 'lightColor1' : 'darkColor1')}
     >
       {!menuState ? iconsData.menu : iconsData.close2} <span>Menu</span>
     </p>

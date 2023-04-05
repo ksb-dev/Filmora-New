@@ -65,7 +65,7 @@
 
         &__detail {
           width: 750px;
-          margin: 0 1rem;
+          margin: 0 2rem;
           border-radius: var(--border-radius-1);
 
           .title {
@@ -85,7 +85,7 @@
         }
 
         &--activeOption {
-          display: none;
+          //display: none;
           width: fit-content;
           margin: 2rem 0 0 2rem;
           font-size: 1.25rem;
@@ -93,6 +93,9 @@
           transition: var(--transition);
           text-align: center;
           border-radius: var(--border-radius-1);
+          background: rgb(0, 0, 0, 0.75);
+          color: #fff;
+          padding: 0.5rem 1rem;
         }
       }
     }
@@ -100,7 +103,7 @@
     .prevBtn,
     .nextBtn {
       position: absolute;
-      left: 1rem;
+      left: 2rem;
       cursor: pointer;
       border-radius: 50%;
       margin: 0;
@@ -119,13 +122,13 @@
 
     .nextBtn {
       left: unset;
-      right: 1rem;
+      right: 2rem;
     }
 
     .length {
       position: absolute;
       bottom: 1rem;
-      right: 1rem;
+      right: 2rem;
       cursor: pointer;
       margin: 0;
       //min-width: 70.45px;
@@ -144,16 +147,31 @@
     }
   }
 
+  .activeOption {
+    //background: var(--primary);
+    text-align: center;
+    padding: 0.25rem 0;
+    //color: #fff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 1rem;
+    //font-size: 1.25rem;
+    //font-family: var(--font-family-1);
+  }
+
   &__sort-switch-activeOption {
     margin: 6rem 0 0 0;
     //padding: 0rem 4.5rem 0rem 4rem;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
+    justify-content: space-around;
     background: transparent !important;
 
     &--activeOption {
+      display: none;
       font-size: 1.25rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -262,13 +280,13 @@
     }
 
     &__sort-switch-activeOption {
-      padding: 0rem 1.5rem 0rem 1rem;
+      padding: 0rem 1rem 0rem 1rem;
 
       justify-content: space-between;
 
       .switch {
         display: flex;
-        margin-left: 1rem;
+        margin-left: 0rem;
       }
 
       &--activeOption {
@@ -347,11 +365,23 @@
         }
       }
 
+      .prevBtn {
+        left: 1rem;
+      }
+
+      .nextBtn {
+        right: 1rem;
+      }
+
       .length {
         font-weight: 400;
-        font-size: 0.8rem;
-        padding: 0.25rem 0.5rem;
+        //font-size: 0.8rem;
+        padding: 0.5rem 1rem;
         min-width: 43.7px;
+        background: rgb(0, 0, 0, 0.75);
+        color: #fff;
+        font-weight: 500;
+        right: 1rem;
       }
     }
 

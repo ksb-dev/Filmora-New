@@ -1,6 +1,6 @@
 #root {
   //--primary: #f5c518;
-  //--primary: goldenrod;
+  --primary: goldenrod;
   //--primary: salmon;
   //--primary: #1db954;
   //--primary: #01b4e4;
@@ -11,7 +11,7 @@
   //--primary: darkturquoise;
   //--primary: darkcyan;
   //--primary: dodgerblue;
-  --primary: deepskyblue;
+  //--primary: deepskyblue;
   //--primary: royalblue;
   //--primary: mediumslateblue;
   //--primary: darkorchid;
@@ -26,7 +26,7 @@
   --gold-1: goldenrod;
   --blue: #1da1f2;
   --red: #e50914;
-  //--red: tomato;
+  --red: tomato;
 
   --blue-2: #01b4e4;
   --blue-3: #0d253f;
@@ -84,7 +84,7 @@
 
 .primaryBg {
   //text-transform: uppercase;
-  font-weight: 500 !important;
+  font-weight: 700 !important;
   background: var(--primary);
   color: #000;
 }

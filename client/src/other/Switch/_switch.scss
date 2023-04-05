@@ -38,8 +38,11 @@
 @media screen and (max-width: 640px) {
   .switch__component {
     &__inner {
+      // p {
+      //   font-size: 0.8rem;
+      // }
       p:first-child {
-        margin-right: 1.5rem;
+        margin-right: 1rem;
       }
     }
   }

@@ -210,9 +210,9 @@ const List = ({ type, playerRef, playerInnerRef }) => {
                     </span>
                   )}
 
-                  <span className='length'>
+                  {/* <span className='length'>
                     {index + 1 + ' / ' + list.length}
-                  </span>
+                  </span> */}
 
                   <p className='overview'>
                     {list[index].overview ? (
@@ -227,7 +227,15 @@ const List = ({ type, playerRef, playerInnerRef }) => {
                   </p>
                 </div>
 
-                <p className='list__wall__cover__inner--activeOption '>
+                <p
+                  className={
+                    'list__wall__cover__inner--activeOption '
+                    // +
+                    // (mode === true
+                    //   ? 'darkBg1 lightColor1'
+                    //   : 'lightBg1 darkColor1')
+                  }
+                >
                   {window.location.pathname !== '/watchlist' &&
                     sessionStorage.getItem('option')}
 
@@ -294,6 +302,18 @@ const List = ({ type, playerRef, playerInnerRef }) => {
           </div>
         </>
       )}
+
+      {/* <p
+        className={
+          'activeOption ' +
+          (mode === true ? 'lightBg1 darkColor1' : 'darkBg1 lightColor1')
+        }
+      >
+        {window.location.pathname !== '/watchlist' &&
+          sessionStorage.getItem('option')}
+
+        {window.location.pathname === '/watchlist' && 'Watchlist'}
+      </p> */}
 
       <div
         className={

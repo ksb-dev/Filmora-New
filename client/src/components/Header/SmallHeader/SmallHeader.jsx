@@ -72,7 +72,7 @@ const SmallHeader = () => {
       ref={smallHeaderRef}
       className={
         'small-header ' +
-        (mode === true ? 'lightBg1 darkColor1' : 'darkBg2 lightColor1')
+        (mode === true ? 'darkBg2 lightColor1' : 'lightBg1 darkColor1')
       }
     >
       <div className='small-header__options'>
