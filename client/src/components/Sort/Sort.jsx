@@ -69,7 +69,7 @@ const Sort = ({ type }) => {
         ref={openRef}
         className={
           'sort__open ' +
-          (mode === true ? 'darkBg2 lightColor1' : 'lightBg1 darkColor1')
+          (mode === true ? 'lightBg2 darkColor1' : 'darkBg1 lightColor1')
         }
       >
         <span>{sortState}</span>
