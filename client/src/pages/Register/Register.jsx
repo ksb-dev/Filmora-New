@@ -115,12 +115,14 @@ const Register = () => {
           {/* Button */}
 
           {isPending ? (
-            <button className={mode === true ? 'primaryBg' : 'primaryBg'}>
+            <button
+            //className={mode === true ? 'primaryBg' : 'primaryBg'}
+            >
               <LoadingOne />
             </button>
           ) : (
             <button
-              className={mode === true ? 'primaryBg' : 'primaryBg'}
+              //className={mode === true ? 'primaryBg' : 'primaryBg'}
               onSubmit={handleSubmit}
             >
               Submit

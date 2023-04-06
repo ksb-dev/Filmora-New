@@ -37,31 +37,43 @@
         text-decoration: none;
         margin-right: 1rem;
         cursor: pointer;
-        font-weight: 700;
+        font-weight: 500;
         font-size: 1.5rem;
         letter-spacing: 0px;
-        color: var(--primary);
+        padding: 0 0.5rem;
+        //background: var(--primary);
 
         .first {
           margin-right: 0rem;
         }
 
         .last {
-          margin-left: 2rem;
+          margin-left: 2.4rem;
         }
 
         .icon {
           position: absolute;
           //left: 7rem;
-          top: 0rem;
-          font-size: 2rem;
+          top: -0.25rem;
+          font-size: 2.5rem;
           //color: #fff;
+          color: var(--primary);
         }
       }
 
       .title:hover {
-        border-radius: 25px;
-        transition: var(--transition);
+        //transform: rotate(-3deg);
+
+        .first,
+        .last {
+          color: var(--primary);
+          transition: var(--transition);
+        }
+
+        .icon {
+          color: unset;
+          transition: var(--transition);
+        }
       }
     }
 

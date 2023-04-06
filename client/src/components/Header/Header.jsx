@@ -114,7 +114,11 @@ const Header = () => {
         {/* One */}
         <div className='header__options__one'>
           <p
-            className='title '
+            className={
+              'title '
+              // +
+              // (mode === true ? 'lightBg1 darkColor1' : 'darkBg2 lightColor1')
+            }
             onClick={() => {
               handleTitleClick()
             }}
@@ -122,7 +126,8 @@ const Header = () => {
             <span className='first'>Film</span>
             <span
               className={
-                'icon ' + (mode === true ? 'lightColor1' : 'darkColor1')
+                'icon '
+                //+ (mode === true ? 'lightColor1' : 'darkColor1')
               }
             >
               <GiFilmSpool />

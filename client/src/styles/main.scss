@@ -1,16 +1,16 @@
 #root {
   //--primary: #f5c518;
-  --primary: goldenrod;
+  //--primary: goldenrod;
   //--primary: salmon;
   //--primary: #1db954;
   //--primary: #01b4e4;
   //--primary: cornflowerblue;
   //--primary: tomato;
   //--primary: #e50914;
-  //--secondary: #e50914;
+  //--primary: #ff2800;
   //--primary: darkturquoise;
   //--primary: darkcyan;
-  //--primary: dodgerblue;
+  --primary: dodgerblue;
   //--primary: deepskyblue;
   //--primary: royalblue;
   //--primary: mediumslateblue;
@@ -18,7 +18,7 @@
   //--primary: rebeccapurple;
   //--primary: slateblue;
   //--primary: orangered;
-  //--primary: orange;
+  //--primary: darkorange;
   //--primary: olivedrab;
 
   --green: #1db954;
@@ -86,7 +86,7 @@
   //text-transform: uppercase;
   font-weight: 500 !important;
   background: var(--primary);
-  color: #000;
+  color: #fff;
 }
 
 .secondaryBg {
@@ -280,7 +280,7 @@
 }
 
 .orangeBg {
-  background-color: darkorange;
+  background-color: darkgoldenrod;
   color: #fff !important;
 }
 

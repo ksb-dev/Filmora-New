@@ -12,6 +12,9 @@ import { useMovieContext } from '../../../context/context'
 // react router dom
 import { Link } from 'react-router-dom'
 
+// icons
+import { GiFilmSpool } from 'react-icons/gi'
+
 const SmallHeader = () => {
   const {
     mode,
@@ -79,12 +82,23 @@ const SmallHeader = () => {
         <div className='title'>
           <Link
             to='/'
-            className='title '
+            className={
+              'title ' + (mode === true ? 'lightColor1' : 'darkColor1')
+            }
             onClick={() => {
               handleTitleClick()
             }}
           >
-            <span>TMDb</span>
+            <span className='first'>Film</span>
+            <span
+              className={
+                'icon '
+                //+ (mode === true ? 'lightColor1' : 'darkColor1')
+              }
+            >
+              <GiFilmSpool />
+            </span>
+            <span className='last'>ra</span>
           </Link>
         </div>
 

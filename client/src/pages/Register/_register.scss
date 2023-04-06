@@ -14,11 +14,12 @@
     &__form {
       position: relative;
       width: 350px;
-      padding: 1rem 2rem;
+      padding: 2rem;
       border-radius: var(--border-radius-1);
       display: flex;
       flex-direction: column;
       justify-content: center;
+      box-shadow: 0 0 100px #555;
 
       &--title {
         margin: 0 0 2rem 0;
@@ -45,18 +46,19 @@
       button {
         min-height: 37.6px;
         min-width: 81.8px;
+        width: 100%;
         margin-bottom: 1rem;
         cursor: pointer;
         border-radius: var(--border-radius-1);
         border: none;
         padding: 0.6rem 1rem;
-        width: min-content;
         font-size: 1rem;
 
         display: flex;
         align-items: center;
         justify-content: center;
 
+        background: var(--primary);
         color: #fff;
       }
 
