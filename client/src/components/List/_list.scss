@@ -65,7 +65,7 @@
 
         &__detail {
           width: 750px;
-          margin: 0 2rem;
+          margin: 0 2rem 2rem 2rem;
           border-radius: var(--border-radius-1);
 
           .title {
@@ -163,7 +163,7 @@
   }
 
   &__sort-switch-activeOption {
-    margin: 6rem 0 0 0;
+    margin: 4rem 0 0 0;
     //padding: 0rem 4.5rem 0rem 4rem;
     display: flex;
     align-items: center;
@@ -265,17 +265,26 @@
       &__cover {
         &__inner {
           &__detail {
-            width: 450px;
+            //width: 480px;
 
             margin: 0 0 1rem 1rem;
+
+            .overview {
+              display: none;
+              //line-height: 1.5rem;
+            }
           }
 
           &--activeOption {
+            font-size: 1rem;
+            text-transform: uppercase;
             display: flex;
             margin: 1rem 0 0 1rem;
             background: rgb(0, 0, 0, 0.75);
+            //background: var(--primary);
             color: #fff;
             padding: 0.5rem 1rem;
+            letter-spacing: 2px;
           }
         }
       }
@@ -325,17 +334,18 @@
         //background: transparent !important;
 
         &__inner {
-          flex-direction: column;
+          //flex-direction: column;
 
           &__detail {
-            margin: 1rem 0 0 1rem;
+            margin: 0 0 1rem 1rem;
             width: fit-content;
-            max-width: 80%;
+            max-width: 70%;
             height: min-content;
             border-radius: var(--border-radius-1);
-            background: rgba(0, 0, 0, 0.75);
-            color: #fff;
-            padding: 0.5rem 1rem;
+            //background: rgba(0, 0, 0, 0.75);
+            //color: #fff;
+            color: rgb(150, 150, 150);
+            //padding: 0.5rem 1rem;
 
             .title {
               font-weight: 500;
@@ -357,11 +367,12 @@
           }
 
           &--activeOption {
-            margin: 0 0 1rem 1rem;
-            text-transform: capitalize;
-            background: unset;
-            color: rgb(150, 150, 150);
-            padding: 0;
+            // margin: 1rem 0 0 1rem;
+            // //text-transform: capitalize;
+            // background: var(--primary);
+            // color: #fff;
+            // padding: 0.5rem 1rem;
+            // letter-spacing: 2px;
 
             font-size: 1rem;
             font-family: var(--font-family-1);
