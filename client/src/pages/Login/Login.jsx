@@ -136,7 +136,7 @@ const Login = () => {
             <p
               className={
                 'login__inner__form__error ' +
-                (mode === true ? 'lightAlpha6' : 'darkAlpha5')
+                (mode === true ? 'lightAlpha5' : 'darkAlpha5')
               }
             >
               <span>{error}</span>
