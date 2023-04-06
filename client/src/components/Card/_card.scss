@@ -34,37 +34,6 @@
     }
   }
 
-  // &__btn,
-  // &__add__btn,
-  // &__delete__btn {
-  //   display: none;
-  //   position: absolute;
-  //   top: -1rem;
-  //   width: 35px;
-  //   height: 35px;
-  //   cursor: pointer;
-  //   z-index: 1;
-  //   background: rgba(0, 0, 0, 0.6);
-  //   color: #fff;
-  //   border-top-left-radius: var(--border-radius-1);
-  //   border-bottom-right-radius: var(--border-radius-1);
-
-  //   &--icon {
-  //     position: absolute;
-  //     top: 50%;
-  //     left: 50%;
-  //     transform: translate(-50%, -45%);
-  //   }
-  // }
-
-  // &__btn:hover,
-  // &__add__btn:hover,
-  // &__delete__btn:hover {
-  //   transform: scale(1.2);
-  //   border-radius: var(--border-radius-1);
-  //   transition: var(--transition);
-  // }
-
   &__rating {
     position: absolute;
     right: 0;
@@ -99,6 +68,8 @@
     opacity: 0;
     z-index: 2;
     transition: var(--transition);
+
+    box-shadow: 0 0 25px var(--primary);
 
     &__inner {
       position: absolute;
@@ -175,6 +146,8 @@
           margin-right: 0.5rem;
           width: 50px;
           height: 50px;
+          background: var(--primary) !important;
+          color: #fff !important;
         }
 
         &--more:hover,
@@ -264,12 +237,12 @@
   //box-shadow: 0 0 3px #000;
 }
 
-.lightOption {
+.darkOption {
   background: var(--white-1);
   color: var(--dark-2);
 }
 
-.darkOption {
-  background: #000;
+.lightOption {
+  background: var(--dark-1);
   color: #fff;
 }
