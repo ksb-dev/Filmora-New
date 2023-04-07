@@ -62,7 +62,7 @@ const Switch = () => {
             <span
               className={
                 'notChecked ' +
-                (mode === true ? 'darkCheckBorder ' : 'lightCheckBorder')
+                (mode === true ? 'lightCheckBorder ' : 'darkCheckBorder')
               }
             ></span>
             Movie
@@ -78,7 +78,7 @@ const Switch = () => {
             <span
               className={
                 'notChecked ' +
-                (mode === true ? 'darkCheckBorder ' : 'lightCheckBorder')
+                (mode === true ? 'lightCheckBorder ' : 'darkCheckBorder')
               }
             ></span>
             Tv

@@ -8,8 +8,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem;
+    padding: 0.25rem 0.5rem;
     cursor: pointer;
+    border-bottom: unset !important;
+    // background: var(--primary) !important;
+    // color: #fff !important;
+    background: transparent !important;
 
     span {
       display: inline-block;
@@ -23,13 +27,16 @@
     display: flex;
     flex-direction: column;
     border-radius: var(--border-radius-1);
-    box-shadow: 0 2px 10px #555;
+    box-shadow: 0px 5px 5px #000;
+    // background: var(--primary) !important;
+    // color: #fff !important;
 
     z-index: -1;
     opacity: 0;
 
     transition: var(--transition);
-    margin-top: -2px;
+    //margin-top: -2px;
+    top: 2rem;
 
     &__inner {
       transform: scaleY(0);
@@ -38,9 +45,11 @@
       span {
         display: flex;
         align-items: center;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.5rem;
         cursor: pointer;
         font-weight: 400;
+        // background: var(--primary) !important;
+        // color: #fff !important;
       }
 
       span:first-child {

@@ -4,13 +4,13 @@
   //--primary: salmon;
   //--primary: #1db954;
   //--primary: #01b4e4;
-  //--primary: cornflowerblue;
+  --primary: cornflowerblue;
   //--primary: tomato;
   //--primary: #e50914;
   //--primary: #ff2800;
   //--primary: darkturquoise;
   //--primary: darkcyan;
-  --primary: dodgerblue;
+  //--primary: dodgerblue;
   //--primary: deepskyblue;
   //--primary: royalblue;
   //--primary: mediumslateblue;
@@ -193,7 +193,7 @@
 .lightGradient1 {
   background: linear-gradient(
     to top,
-    rgba(255, 255, 255, 1) 20%,
+    rgba(255, 255, 255, 1) 30%,
     rgba(255, 255, 255, 0)
   );
 }
@@ -201,7 +201,7 @@
 .darkGradient1 {
   background: linear-gradient(
     to top,
-    rgb(34, 34, 34, 1) 20%,
+    rgb(34, 34, 34, 1) 30%,
     rgba(34, 34, 34, 0)
   );
 }
@@ -280,7 +280,7 @@
 }
 
 .orangeBg {
-  background-color: darkgoldenrod;
+  background-color: darkorange;
   color: #fff !important;
 }
 

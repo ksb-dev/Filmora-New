@@ -210,10 +210,6 @@ const List = ({ type, playerRef, playerInnerRef }) => {
                     </span>
                   )}
 
-                  {/* <span className='length'>
-                    {index + 1 + ' / ' + list.length}
-                  </span> */}
-
                   <p className='overview'>
                     {list[index].overview ? (
                       list[index].overview.length > 245 ? (
@@ -226,21 +222,6 @@ const List = ({ type, playerRef, playerInnerRef }) => {
                     )}
                   </p>
                 </div>
-
-                <p
-                  className={
-                    'list__wall__cover__inner--activeOption '
-                    // +
-                    // (mode === true
-                    //   ? 'lightBg2 darkColor1'
-                    //   : 'lightBg1 darkColor1')
-                  }
-                >
-                  {window.location.pathname !== '/watchlist' &&
-                    sessionStorage.getItem('option')}
-
-                  {window.location.pathname === '/watchlist' && 'Watchlist'}
-                </p>
               </div>
             </Link>
 
@@ -269,66 +250,34 @@ const List = ({ type, playerRef, playerInnerRef }) => {
             >
               <span>{index + 1 + ' / ' + list.length}</span>
             </p>
-
-            {/* <div ref={buttonsRef} className='list__wall__buttons'>
-              {list.length > 1 ? (
-                <>
-                  <p
-                    onClick={() => previousImage(-1)}
-                    className={mode === true ? 'darkColor1' : 'lightColor1'}
-                  >
-                    <span>{iconsData.prev}</span>
-                  </p>
-
-                  <p
-                    className={
-                      'length ' + (mode === true ? 'darkColor1' : 'lightColor1')
-                    }
-                  >
-                    <span>{index + 1 + ' / ' + list.length}</span>
-                  </p>
-
-                  <p
-                    onClick={() => nextImage(1)}
-                    className={mode === true ? 'darkColor1' : 'lightColor1'}
-                  >
-                    <span>{iconsData.next}</span>
-                  </p>
-                </>
-              ) : (
-                <></>
-              )}
-            </div> */}
           </div>
         </>
       )}
 
-      {/* <p
+      <div
         className={
-          'activeOption ' +
-          (mode === true ? 'lightBg1 darkColor1' : 'darkBg1 lightColor1')
+          'activeOption-sort ' +
+          (mode === true ? 'darkBg1 lightColor1' : 'lightBg1 darkColor1')
         }
       >
-        {window.location.pathname !== '/watchlist' &&
-          sessionStorage.getItem('option')}
+        <p className={'activeOption '}>
+          {window.location.pathname !== '/watchlist' &&
+            sessionStorage.getItem('option')}
 
-        {window.location.pathname === '/watchlist' && 'Watchlist'}
-      </p> */}
+          {window.location.pathname === '/watchlist' && 'Watchlist'}
+        </p>
+        {list && list.length > 0 && <Sort type={type} />}
+      </div>
 
       <div
         className={
           'list__sort-switch-activeOption ' +
-          (mode === true ? 'lightBg2' : 'darkBg1')
+          (mode === true ? 'darkBg1 lightColor1' : 'lightBg1 darkColor1')
         }
       >
         {list && list.length > 0 && <Sort type={type} />}
 
-        <p
-          className={
-            'list__sort-switch-activeOption--activeOption ' +
-            (mode === true ? 'darkColor1' : 'lightColor1')
-          }
-        >
+        <p className={'activeOption '}>
           {window.location.pathname !== '/watchlist' &&
             sessionStorage.getItem('option')}
 
