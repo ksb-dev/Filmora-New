@@ -313,6 +313,10 @@ const ImageDetail = ({ id, type, playerRef, playerInnerRef }) => {
                 <span className='btn-icon'>{iconsData.addBookmark1}</span>
               </p>
             )}
+
+            <p className='play-btn' onClick={() => playTrailer()}>
+              <span>{iconsData.play1}</span> Watch Trailer
+            </p>
           </div>
 
           <div className='image__detail__cover__two__detail'>

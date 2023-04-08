@@ -8,7 +8,7 @@
   &__cover {
     padding: 4rem 8rem 4rem 4rem;
     //border-bottom-right-radius: var(--border-radius-1);
-    box-shadow: var(--box-shadow-4);
+    //box-shadow: var(--box-shadow-4);
 
     &__one {
       display: none;
@@ -88,6 +88,30 @@
         .delete-btn:hover {
           transform: scale(1.2);
           border-radius: var(--border-radius-1);
+          transition: var(--transition);
+        }
+
+        .play-btn {
+          position: absolute;
+          bottom: 0;
+          cursor: pointer;
+          width: 100%;
+          display: flex;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          background: var(--primary);
+          margin: 0;
+          color: #fff;
+          font-weight: 500;
+
+          span {
+            margin-right: 0.5rem;
+          }
+        }
+
+        .play-btn:hover {
+          filter: brightness(80%);
           transition: var(--transition);
         }
       }
@@ -179,6 +203,7 @@
           background: var(--primary);
           color: #fff;
           display: flex;
+          //display: none;
           align-items: center;
           width: fit-content;
           padding: 0.5rem 1rem;
@@ -210,6 +235,7 @@
 
     &__cover {
       padding: 2rem 1rem 2rem 1rem;
+      box-shadow: none;
 
       &__one {
         display: flex;
@@ -277,6 +303,10 @@
           .rating {
             left: unset;
             right: 0;
+          }
+
+          .play-btn {
+            display: none;
           }
         }
 
