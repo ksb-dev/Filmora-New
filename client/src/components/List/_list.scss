@@ -137,7 +137,7 @@
     padding: 0 2rem;
     box-sizing: border-box;
 
-    .activeOption {
+    .activeOption-1 {
       text-transform: uppercase;
       font-weight: 500;
       letter-spacing: 5px;
@@ -145,6 +145,10 @@
       margin: 0;
       padding: 0.5rem 0;
     }
+  }
+
+  .activeOption-2 {
+    display: none;
   }
 
   &__movies {
@@ -236,6 +240,7 @@
     }
 
     &__sort-switch-activeOption {
+      margin-bottom: 2rem;
       padding: 0.25rem 1rem;
       justify-content: space-between;
 
@@ -244,9 +249,18 @@
         margin-left: 0rem;
       }
 
-      .activeOption {
+      .activeOption-1 {
         display: none;
       }
+    }
+
+    .activeOption-2 {
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin: 0;
     }
 
     &__movies {
@@ -322,7 +336,7 @@
     }
 
     &__movies {
-      margin: 4rem 1rem 2rem 1rem;
+      margin: 2rem 1rem 2rem 1rem;
 
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 1rem 0.75rem;

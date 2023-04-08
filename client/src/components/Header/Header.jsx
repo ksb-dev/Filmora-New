@@ -106,7 +106,7 @@ const Header = () => {
     <div
       className={
         'header ' +
-        (mode === true ? 'darkBg2 lightColor1 ' : 'lightBg1 darkColor1 ')
+        (mode === true ? 'darkBg2 lightColor1 ' : 'lightBg1 darkColor1')
       }
       ref={headerRef}
     >

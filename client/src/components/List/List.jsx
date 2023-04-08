@@ -262,7 +262,7 @@ const List = ({ type, playerRef, playerInnerRef }) => {
       >
         {list && list.length > 0 && <Sort type={type} />}
 
-        <p className={'activeOption '}>
+        <p className={'activeOption-1 '}>
           {window.location.pathname !== '/watchlist' &&
             sessionStorage.getItem('option')}
 
@@ -271,6 +271,13 @@ const List = ({ type, playerRef, playerInnerRef }) => {
 
         <div className='switch'>{list && list.length > 0 && <Switch />}</div>
       </div>
+
+      <p className={'activeOption-2 '}>
+        {window.location.pathname !== '/watchlist' &&
+          sessionStorage.getItem('option')}
+
+        {window.location.pathname === '/watchlist' && 'Watchlist'}
+      </p>
 
       <div className='list__movies'>
         {list &&

@@ -56,7 +56,7 @@ const Switch = () => {
         {optionState === 'movie' ? (
           <p>
             <span
-              className={'checked ' + (mode === true ? 'darkBg1' : 'lightBg1')}
+              className={'checked ' + (mode === true ? 'lightBg1' : 'darkBg1')}
             ></span>{' '}
             Movie
           </p>
@@ -65,7 +65,7 @@ const Switch = () => {
             <span
               className={
                 'notChecked ' +
-                (mode === true ? 'lightCheckBorder ' : 'darkCheckBorder')
+                (mode === true ? 'lightCheckBorder' : 'darkCheckBorder')
               }
             ></span>
             Movie
@@ -75,7 +75,7 @@ const Switch = () => {
         {optionState === 'tv' ? (
           <p>
             <span
-              className={'checked ' + (mode === true ? 'darkBg2' : 'lightBg1')}
+              className={'checked ' + (mode === true ? 'lightBg1' : 'darkBg1')}
             ></span>{' '}
             Tv
           </p>
