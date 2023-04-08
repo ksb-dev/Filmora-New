@@ -41,6 +41,8 @@
         flex-direction: column;
         justify-content: flex-start;
 
+        box-shadow: var(--box-shadow-4);
+
         &--title {
           position: absolute;
           left: 4rem;

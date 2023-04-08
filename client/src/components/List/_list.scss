@@ -138,12 +138,12 @@
     box-sizing: border-box;
 
     .activeOption-1 {
-      text-transform: uppercase;
+      //text-transform: uppercase;
       font-weight: 500;
-      letter-spacing: 5px;
-      background: var(--primary);
+      letter-spacing: 2px;
       margin: 0;
       padding: 0.5rem 0;
+      color: #fff !important;
     }
   }
 
@@ -155,7 +155,7 @@
     max-width: 1280px;
     // margin: 4rem 4rem 4rem 4rem;
     // margin: 4rem auto;
-    //padding: 0 4rem;
+    padding: 0 4rem;
     margin-bottom: 4rem;
 
     display: grid;
@@ -195,7 +195,8 @@
     }
 
     &__movies {
-      margin: 4rem 2rem 4rem 2rem;
+      //margin: 4rem 2rem 4rem 2rem;
+      padding: 0 2rem;
     }
   }
 }
@@ -259,14 +260,16 @@
     .activeOption-2 {
       display: flex;
       justify-content: center;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 5px;
+      //text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 2px;
       margin: 0;
+      margin-bottom: 2rem;
     }
 
     &__movies {
-      margin: 4rem 1rem 2rem 1rem;
+      //margin: 4rem 1rem 2rem 1rem;
+      padding: 0 1rem;
       gap: 2rem;
     }
   }
@@ -302,7 +305,7 @@
             color: rgb(150, 150, 150);
 
             .title {
-              font-weight: 500;
+              font-weight: 400;
               font-size: 1rem;
               font-family: var(--font-family-1);
             }
@@ -312,7 +315,7 @@
               color: rgb(150, 150, 150);
               font-size: 0.8rem;
               margin-top: 0.25rem;
-              font-weight: 500;
+              font-weight: 400;
             }
 
             .overview {
@@ -338,7 +341,7 @@
     }
 
     &__movies {
-      margin: 2rem 1rem 2rem 1rem;
+      //margin: 2rem 1rem 2rem 1rem;
 
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 1rem 0.75rem;

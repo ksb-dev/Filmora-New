@@ -127,7 +127,7 @@ const Search = () => {
       ref={searchComponentRef}
       className={
         'search__component ' +
-        (mode === true ? 'lightAlpha6 darkColor1' : 'darkAlpha6 lightColor1')
+        (mode === true ? 'lightAlpha2 darkColor1' : 'darkAlpha2 lightColor1')
       }
     >
       <div

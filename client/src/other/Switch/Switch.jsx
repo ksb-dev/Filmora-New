@@ -55,80 +55,25 @@ const Switch = () => {
       <div className='switch__component__inner'>
         {optionState === 'movie' ? (
           <p>
-            <span
-              className={'checked ' + (mode === true ? 'lightBg1' : 'darkBg1')}
-            ></span>{' '}
-            Movie
+            <span className='checked lightBg1'></span> Movie
           </p>
         ) : (
           <p onClick={() => handleOptionState('movie')}>
-            <span
-              className={
-                'notChecked ' +
-                (mode === true ? 'lightCheckBorder' : 'darkCheckBorder')
-              }
-            ></span>
+            <span className='notChecked lightCheckBorder'></span>
             Movie
           </p>
         )}
 
         {optionState === 'tv' ? (
           <p>
-            <span
-              className={'checked ' + (mode === true ? 'lightBg1' : 'darkBg1')}
-            ></span>{' '}
-            Tv
+            <span className='checked lightBg1'></span> Tv
           </p>
         ) : (
           <p onClick={() => handleOptionState('tv')}>
-            <span
-              className={
-                'notChecked ' +
-                (mode === true ? 'lightCheckBorder ' : 'darkCheckBorder')
-              }
-            ></span>
+            <span className='notChecked lightCheckBorder'></span>
             Tv
           </p>
         )}
-        {/* {optionState === 'movie' ? (
-        <p
-          className='switch__component__movie activeSwitch '
-          onClick={() => handleOptionState('movie')}
-        >
-          <span>Movie</span>
-        </p>
-      ) : (
-        <p
-          className={
-            'switch__component__movie ' +
-            (mode === true ? 'lightBg2 darkColor2' : 'darkBg1 lightColor1')
-          }
-          onClick={() => handleOptionState('movie')}
-        >
-          <span>Movie</span>
-        </p>
-      )}
-
-     
-
-      {optionState === 'tv' ? (
-        <p
-          className='switch__component__tv activeSwitch'
-          onClick={() => handleOptionState('tv')}
-        >
-          <span>Tv</span>
-        </p>
-      ) : (
-        <p
-          className={
-            'switch__component__tv ' +
-            (mode === true ? 'lightBg2 darkColor2' : 'darkBg1 lightColor1')
-          }
-          onClick={() => handleOptionState('tv')}
-        >
-          <span>Tv</span>
-        </p>
-      )} */}
       </div>
     </div>
   )

@@ -174,7 +174,7 @@ const ImageDetail = ({ id, type, playerRef, playerInnerRef }) => {
       <div
         className={
           'image__detail__cover ' +
-          (mode === true ? 'lightAlpha5' : 'darkAlpha5')
+          (mode === true ? 'lightGradient' : 'darkGradient')
         }
       >
         {/* ---------- One ---------- */}

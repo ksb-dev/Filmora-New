@@ -110,7 +110,7 @@ const Menu = () => {
       ref={menuRef}
       className={
         'menu ' +
-        (mode === true ? 'lightAlpha6 darkColor1' : 'darkAlpha6 lightColor1')
+        (mode === true ? 'lightAlpha2 darkColor1' : 'darkAlpha2 lightColor1')
       }
     >
       <div
