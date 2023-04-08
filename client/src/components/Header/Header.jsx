@@ -106,7 +106,7 @@ const Header = () => {
     <div
       className={
         'header ' +
-        (mode === true ? 'darkBg2 lightColor1 ' : 'lightBg1 darkColor1')
+        (mode === true ? 'lightBg1 darkColor1' : 'darkBg2 lightColor1')
       }
       ref={headerRef}
     >
@@ -150,7 +150,7 @@ const Header = () => {
             <Link
               to='/'
               className={
-                'home-link ' + (mode === true ? 'lightColor1' : 'darkColor1')
+                'home-link ' + (mode === true ? 'darkColor1' : 'lightColor1')
               }
             >
               <span>{iconsData.homeOutlined}</span> <span>Home</span>
@@ -166,7 +166,7 @@ const Header = () => {
               to='/watchlist'
               className={
                 'watchlist-link ' +
-                (mode === true ? 'lightColor1' : 'darkColor1')
+                (mode === true ? 'darkColor1' : 'lightColor1')
               }
             >
               <span>{iconsData.outlineBookmark}</span> <span>Watchlist</span>
@@ -194,7 +194,7 @@ const Header = () => {
               <Link
                 to='/login'
                 className={
-                  'login-link ' + (mode === true ? 'lightColor1' : 'darkColor1')
+                  'login-link ' + (mode === true ? 'darkColor1' : 'lightColor1')
                 }
               >
                 <span>{iconsData.loginOutlined}</span> <span>Login</span>

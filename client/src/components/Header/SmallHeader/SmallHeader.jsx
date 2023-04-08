@@ -75,7 +75,7 @@ const SmallHeader = () => {
       ref={smallHeaderRef}
       className={
         'small-header ' +
-        (mode === true ? 'darkBg2 lightColor1' : 'lightBg1 darkColor1')
+        (mode === true ? 'lightBg1 darkColor1' : 'darkBg2 lightColor1')
       }
     >
       <div className='small-header__options'>
@@ -83,7 +83,7 @@ const SmallHeader = () => {
           <Link
             to='/'
             className={
-              'title ' + (mode === true ? 'lightColor1' : 'darkColor1')
+              'title ' + (mode === true ? 'darkColor1' : 'lightColor1')
             }
             onClick={() => {
               handleTitleClick()

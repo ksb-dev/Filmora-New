@@ -152,9 +152,11 @@
   }
 
   &__movies {
-    max-width: calc(1280px - 0rem);
-    margin: 4rem 4rem 4rem 4rem;
-    margin: 4rem auto;
+    max-width: 1280px;
+    // margin: 4rem 4rem 4rem 4rem;
+    // margin: 4rem auto;
+    //padding: 0 4rem;
+    margin-bottom: 4rem;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
