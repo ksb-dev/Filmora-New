@@ -55,7 +55,10 @@ const Switch = () => {
       <div className='switch__component__inner'>
         {optionState === 'movie' ? (
           <p>
-            <span className='checked'></span> Movie
+            <span
+              className={'checked ' + (mode === true ? 'darkBg1' : 'lightBg1')}
+            ></span>{' '}
+            Movie
           </p>
         ) : (
           <p onClick={() => handleOptionState('movie')}>
@@ -71,7 +74,10 @@ const Switch = () => {
 
         {optionState === 'tv' ? (
           <p>
-            <span className='checked'></span> Tv
+            <span
+              className={'checked ' + (mode === true ? 'darkBg2' : 'lightBg1')}
+            ></span>{' '}
+            Tv
           </p>
         ) : (
           <p onClick={() => handleOptionState('tv')}>

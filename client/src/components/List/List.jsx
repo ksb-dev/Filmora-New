@@ -256,21 +256,6 @@ const List = ({ type, playerRef, playerInnerRef }) => {
 
       <div
         className={
-          'activeOption-sort ' +
-          (mode === true ? 'darkBg1 lightColor1' : 'lightBg1 darkColor1')
-        }
-      >
-        <p className={'activeOption '}>
-          {window.location.pathname !== '/watchlist' &&
-            sessionStorage.getItem('option')}
-
-          {window.location.pathname === '/watchlist' && 'Watchlist'}
-        </p>
-        {list && list.length > 0 && <Sort type={type} />}
-      </div>
-
-      <div
-        className={
           'list__sort-switch-activeOption ' +
           (mode === true ? 'darkBg1 lightColor1' : 'lightBg1 darkColor1')
         }
