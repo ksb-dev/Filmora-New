@@ -31,7 +31,7 @@ const Register = () => {
   const { mode } = useMovieContext()
   const { register, isPending, error } = useAuthentication()
 
-  const navigate = useNavigate()
+  //const navigate = useNavigate()
 
   const handleSubmit = e => {
     e.preventDefault()

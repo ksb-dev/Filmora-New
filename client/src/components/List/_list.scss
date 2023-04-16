@@ -136,6 +136,7 @@
     background: var(--primary) !important;
     padding: 0 2rem;
     box-sizing: border-box;
+    border-radius: 25px;
 
     .activeOption-1 {
       //text-transform: uppercase;
@@ -192,6 +193,10 @@
       &__buttons {
         right: 2rem;
       }
+    }
+
+    &__sort-switch-activeOption {
+      border-radius: 0px;
     }
 
     &__movies {

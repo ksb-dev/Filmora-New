@@ -69,7 +69,7 @@
     z-index: 2;
     transition: var(--transition);
 
-    box-shadow: 0 0 50px #555;
+    //outline: 2px solid var(--primary);
 
     &__inner {
       position: absolute;
@@ -146,6 +146,7 @@
           width: 50px;
           height: 50px;
           background: var(--primary) !important;
+          //background: linear-gradient(tomato, red) !important;
           color: #fff !important;
         }
 
