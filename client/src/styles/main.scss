@@ -193,7 +193,7 @@
 .lightGradient1 {
   background: linear-gradient(
     to top,
-    rgba(255, 255, 255, 1) 30%,
+    rgba(255, 255, 255, 0.9) 30%,
     rgba(255, 255, 255, 0)
   );
 }
@@ -201,7 +201,7 @@
 .darkGradient1 {
   background: linear-gradient(
     to top,
-    rgb(34, 34, 34, 1) 30%,
+    rgb(34, 34, 34, 0.95) 30%,
     rgba(34, 34, 34, 0)
   );
 }
