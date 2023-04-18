@@ -108,6 +108,9 @@ const MovieProvider = ({ children }) => {
   const [reviewsLoading, setReviewsLoading] = useState(true)
   const [reviewsError, setReviewsError] = useState('')
 
+  // rating state
+  const [rate, setRate] = useState(false)
+
   return (
     <MovieContext.Provider
       value={{
@@ -221,7 +224,10 @@ const MovieProvider = ({ children }) => {
         searchComponentRef,
         searchComponentInnerRef,
         setMovieInputToEmptyRef,
-        setTvInputToEmptyRef
+        setTvInputToEmptyRef,
+
+        rate,
+        setRate
       }}
     >
       {children}

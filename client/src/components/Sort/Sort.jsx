@@ -14,7 +14,7 @@ import { useSortFilter } from '../../hooks/useSortFilter'
 import { useShowHide } from '../../hooks/useShowHide'
 
 const Sort = ({ type }) => {
-  const { mode, setIndex } = useMovieContext()
+  const { mode, setIndex, rate, setRate } = useMovieContext()
   const { sortMovies, sortShows } = useSortFilter()
   const { showSort, hideSort } = useShowHide()
 
@@ -60,7 +60,9 @@ const Sort = ({ type }) => {
   }, [open])
 
   const handleSort = id => {
-    type === 'movie' ? sortMovies(id) : sortShows(id)
+    type === 'movie'
+      ? sortMovies(id, rate, setRate)
+      : sortShows(id, rate, setRate)
   }
 
   return (
@@ -78,7 +80,7 @@ const Sort = ({ type }) => {
         <span>{sortState}</span>
 
         <span>
-          <i class='fa-solid fa-caret-down' ref={btnRef}></i>
+          <i className='fa-solid fa-caret-down' ref={btnRef}></i>
         </span>
       </div>
 

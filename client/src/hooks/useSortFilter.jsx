@@ -5,9 +5,7 @@ import {
   sortMoviesAtoZ,
   sortMoviesZtoA,
   sortMoviesOneToTen,
-  sortMoviesTenToOne,
-  //filterMoviesGenre,
-  getMovies
+  sortMoviesTenToOne
 } from '../redux/services/movies/getMovies'
 
 import {
@@ -15,9 +13,7 @@ import {
   sortShowsAtoZ,
   sortShowsZtoA,
   sortShowsOneToTen,
-  sortShowsTenToOne,
-  //filterShowsGenre,
-  getTvShows
+  sortShowsTenToOne
 } from '../redux/services/shows/getTvShows'
 
 export const useSortFilter = () => {
@@ -28,7 +24,7 @@ export const useSortFilter = () => {
   const dispatch = useDispatch()
 
   // Sort Movies
-  const sortMovies = value => {
+  const sortMovies = (value, rate, setRate) => {
     if (value === 0) {
       const films = []
 
@@ -37,6 +33,8 @@ export const useSortFilter = () => {
       })
 
       const all = films.map(movie => movie)
+
+      setRate(!rate)
 
       dispatch(resetMovies({ movies: all, sortValue: 'All' }))
     }
@@ -53,6 +51,8 @@ export const useSortFilter = () => {
         return -1
       })
 
+      setRate(!rate)
+
       dispatch(sortMoviesAtoZ({ movies: sorted, sortValue: 'Title (A - Z)' }))
     }
 
@@ -68,6 +68,8 @@ export const useSortFilter = () => {
         return -1
       })
 
+      setRate(!rate)
+
       dispatch(sortMoviesZtoA({ movies: sorted, sortValue: 'Title (Z - A)' }))
     }
 
@@ -79,6 +81,8 @@ export const useSortFilter = () => {
       })
 
       const sorted = films.sort((a, b) => a.vote_average - b.vote_average)
+
+      setRate(!rate)
 
       dispatch(
         sortMoviesOneToTen({ movies: sorted, sortValue: 'Rating (1 - 9)' })
@@ -94,6 +98,8 @@ export const useSortFilter = () => {
 
       const sorted = films.sort((a, b) => b.vote_average - a.vote_average)
 
+      setRate(!rate)
+
       dispatch(
         sortMoviesTenToOne({ movies: sorted, sortValue: 'Rating (9 - 1)' })
       )
@@ -101,7 +107,7 @@ export const useSortFilter = () => {
   }
 
   // Sort Shows
-  const sortShows = value => {
+  const sortShows = (value, rate, setRate) => {
     if (value === 0) {
       const films = []
 
@@ -110,6 +116,8 @@ export const useSortFilter = () => {
       })
 
       const all = films.map(movie => movie)
+
+      setRate(!rate)
 
       dispatch(resetShows({ shows: all, sortValue: 'All' }))
     }
@@ -126,6 +134,8 @@ export const useSortFilter = () => {
         return -1
       })
 
+      setRate(!rate)
+
       dispatch(sortShowsAtoZ({ shows: sorted, sortValue: 'Title (A - Z)' }))
     }
 
@@ -141,6 +151,8 @@ export const useSortFilter = () => {
         return -1
       })
 
+      setRate(!rate)
+
       dispatch(sortShowsZtoA({ shows: sorted, sortValue: 'Title (Z - A)' }))
     }
 
@@ -152,6 +164,8 @@ export const useSortFilter = () => {
       })
 
       const sorted = films.sort((a, b) => a.vote_average - b.vote_average)
+
+      setRate(!rate)
 
       dispatch(
         sortShowsOneToTen({ shows: sorted, sortValue: 'Rating (1 - 10)' })
@@ -166,6 +180,8 @@ export const useSortFilter = () => {
       })
 
       const sorted = films.sort((a, b) => b.vote_average - a.vote_average)
+
+      setRate(!rate)
 
       dispatch(
         sortShowsTenToOne({ shows: sorted, sortValue: 'Rating (10 - 1)' })

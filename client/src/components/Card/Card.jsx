@@ -27,7 +27,7 @@ import { APIs } from '../../APIs/APIs'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 
 const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
-  const { mode, setPlayerUrl, setPlayerLoading, setPlayerError } =
+  const { mode, setPlayerUrl, setPlayerLoading, setPlayerError, rate } =
     useMovieContext()
   const { addMovie, deleteMovie, addShow, deleteShow } =
     useWatchlistOperations()
@@ -58,8 +58,10 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
 
     if (window.location.pathname.includes('/watchlist')) {
       getRating()
+    } else {
+      setVoteAverage(card.vote_average)
     }
-  }, [])
+  }, [rate])
 
   let watchlist = ''
 
@@ -80,7 +82,8 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
     console.log('true...')
   }
 
-  const { poster_path, backdrop_path, id, genre_ids, overview } = card
+  const { poster_path, backdrop_path, id, genre_ids, overview, vote_average } =
+    card
 
   const show = () => {
     infoRef.current.style.opacity = '1'
@@ -95,7 +98,9 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
     infoRef.current.style.opacity = '0'
 
     setTimeout(() => {
-      infoInnerRef.current.style.opacity = '0'
+      if (infoInnerRef && infoInnerRef.current) {
+        infoInnerRef.current.style.opacity = '0'
+      }
     }, 200)
   }
 
@@ -175,55 +180,6 @@ const Card = ({ card, type, user, playerRef, playerInnerRef }) => {
           />
         )}
       </div>
-
-      {/* {user && watchlist && watchlist.length === 0 && (
-        <p className="card__add__btn" onClick={() => handleAddWatchlist()}>
-          <span className="card__btn--icon">{iconsData.addBookmark}</span>
-        </p>
-      )} 
-
-   
-
-     
-      {user &&
-        watchlist &&
-        watchlist.length > 0 &&
-        watchlist.every((item, index) => item.id !== id) && (
-          <p
-            key={id}
-            className="card__add__btn"
-            onClick={() => handleAddWatchlist()}
-          >
-            <span className="card__btn--icon">{iconsData.addBookmark}</span>
-          </p>
-        )}
-
-    
-      {user &&
-        watchlist &&
-        watchlist.length > 0 &&
-        watchlist.map((item, index) => {
-          if (item.id === id) {
-            return (
-              <p
-                key={index}
-                className="card__delete__btn"
-                onClick={() => handleDeleteWatchList()}
-                style={{ background: "gold" }}
-              >
-                <span className="card__btn--icon" style={{ color: "#000" }}>
-                  {iconsData.addedBookmark}
-                </span>
-              </p>
-            );
-          }
-        })}
-
-      {!user && (
-        <p className="card__btn " onClick={() => navigate("/login")}>
-          <span className="card__btn--icon">{iconsData.addBookmark}</span>
-        </p>
-      )} */}
 
       <div className={'card__rating ' + getClassBg(voteAverage)}>
         <CircularProgressbar

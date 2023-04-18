@@ -2,13 +2,14 @@ import React, { useEffect, useRef } from 'react'
 
 // redux
 import { useDispatch } from 'react-redux'
-import { getMovies } from '../../redux/services/movies/getMovies'
-import { getTvShows } from '../../redux/services/shows/getTvShows'
+import { getMovies, resetMovies } from '../../redux/services/movies/getMovies'
+import { getTvShows, resetShows } from '../../redux/services/shows/getTvShows'
 import { setSavedMovies } from '../../redux/services/movies/setSavedMovies'
 import { setSavedShows } from '../../redux/services/shows/setSavedShows'
 
 // context
 import { useMovieContext } from '../../context/context'
+import { useSortFilter } from '../../hooks/useSortFilter'
 
 // components
 import Header from '../../components/Header/Header'
@@ -20,8 +21,10 @@ import Search from '../../components/Search/Search'
 import PlayerOne from '../../components/PlayerOne/PlayerOne'
 
 const Watchlist = () => {
-  const { mode, movieState, setSearchQuery, setIndex } = useMovieContext()
+  const { mode, movieState, setSearchQuery, setIndex, rate, setRate } =
+    useMovieContext()
   const dispatch = useDispatch()
+  const { sortMovies, sortShows } = useSortFilter()
 
   const playerWatchlistRef = useRef(null)
   const playerWatchlistInnerRef = useRef(null)
@@ -40,6 +43,12 @@ const Watchlist = () => {
 
     // Check for movie state
     let savedMovieState = sessionStorage.getItem('movieState')
+
+    if (savedMovieState === 'movie') {
+      sortMovies(0, rate, setRate)
+    } else {
+      sortShows(0, rate, setRate)
+    }
 
     // Check for token
     const savedToken = sessionStorage.getItem('token')
