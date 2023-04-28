@@ -207,9 +207,9 @@
         flex-wrap: wrap;
         align-items: center;
         align-items: flex-start;
-        justify-content: space-evenly;
+        justify-content: space-around;
         // grid-template-columns: 1fr 1fr;
-        // //gap: 0rem;
+        // grid-column-gap: 0rem;
         // align-items: flex-start;
         // justify-items: center;
       }
