@@ -103,7 +103,7 @@
     }
 
     &__name-character {
-      width: 200px;
+      width: 150px;
 
       .name {
         text-align: center;
@@ -118,7 +118,7 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 376px) {
   .actorCard {
     &__image {
       width: 125px;
