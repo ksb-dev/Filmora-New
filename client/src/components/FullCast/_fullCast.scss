@@ -1,8 +1,7 @@
 .full__cast {
   padding: calc(50px + 0rem) 0 2rem 0;
   margin: 0;
-  //width: 100%;
-  overflow-x: hidden;
+  width: 100%;
 
   &__detail {
     display: flex;
@@ -104,7 +103,7 @@
       margin-bottom: 4rem;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-row-gap: 2rem;
+      gap: 2rem;
       min-height: 100px;
     }
   }
@@ -161,7 +160,7 @@
       margin: 0 1rem;
 
       &__inner {
-        grid-row-gap: 1rem;
+        gap: 1rem;
         margin-bottom: 2rem;
       }
     }
@@ -204,10 +203,15 @@
       }
 
       &__inner {
-        grid-template-columns: 1fr 1fr;
-        //gap: 0rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         align-items: flex-start;
-        justify-items: center;
+        justify-content: space-evenly;
+        // grid-template-columns: 1fr 1fr;
+        // //gap: 0rem;
+        // align-items: flex-start;
+        // justify-items: center;
       }
     }
   }
