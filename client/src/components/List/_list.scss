@@ -21,8 +21,8 @@
     position: relative;
     user-select: none;
 
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: var(--border-radius-1);
+    border-bottom-right-radius: var(--border-radius-1);
 
     //box-shadow: var(--box-shadow-4);
 
@@ -35,8 +35,8 @@
       transition: var(--transition);
       transition: var(--transition);
 
-      border-bottom-left-radius: 25px;
-      border-bottom-right-radius: 25px;
+      border-bottom-left-radius: var(--border-radius-1);
+      border-bottom-right-radius: var(--border-radius-1);
     }
 
     &--image-2,
@@ -142,7 +142,7 @@
     background: var(--primary) !important;
     padding: 0 2rem;
     box-sizing: border-box;
-    border-radius: 25px;
+    border-radius: var(--border-radius-1);
 
     .activeOption-1 {
       //text-transform: uppercase;

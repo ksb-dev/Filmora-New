@@ -29,15 +29,18 @@
   transition: var(--transition);
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 875px) {
   .backdrop__card {
-    height: 100px;
+    //height: 100px;
+    height: 100%;
 
     .backdrop__card__image {
-      height: 100px;
+      //height: 100px;
+      height: 100%;
 
       .img {
-        height: 100px;
+        //height: 100px;
+        height: 100%;
       }
     }
   }

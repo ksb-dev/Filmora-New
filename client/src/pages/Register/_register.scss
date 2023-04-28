@@ -60,7 +60,7 @@
 
         background: var(--primary);
         color: #fff;
-        border-radius: 25px;
+        border-radius: var(--border-radius-1);
       }
 
       button:hover {

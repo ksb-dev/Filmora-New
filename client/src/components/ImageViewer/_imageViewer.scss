@@ -20,22 +20,25 @@
     transition: var(--transition);
     border-radius: var(--border-radius-1);
     width: 1000px;
-    height: 570.5px;
-    box-shadow: 0 0 100px #555;
+    //height: 562.5px;
+    //box-shadow: 0 0 100px #555;
+    background: transparent !important;
 
     //filter: var(--filter);
 
     .img-1 {
       width: 1000px;
-      height: 570.5px;
+      //height: 570.5px;
       border-radius: var(--border-radius-1);
       //box-shadow: var(--box-shadow-1);
+      box-shadow: 0 0 100px #555;
     }
 
     .img-2,
     .img-3 {
       display: none;
       //box-shadow: var(--box-shadow-1);
+      box-shadow: 0 0 100px #555;
     }
 
     &__buttons {
@@ -74,8 +77,8 @@
         background: rgba(0, 0, 0, 0.75) !important;
         color: #fff !important;
         margin: 0 1rem;
-        height: 85px;
-        width: 85px;
+        height: 90px;
+        width: 90px;
         margin: 0 0.5rem;
 
         span {
@@ -88,7 +91,7 @@
 
       p:first-child:hover,
       p:last-child:hover {
-        border-radius: 0px;
+        border-radius: var(--border-radius-1);
         transition: var(--transition);
       }
     }
@@ -100,6 +103,7 @@
     &__inner {
       border-radius: unset;
       width: 100%;
+      height: unset;
 
       &--length {
         border-top-right-radius: 0px;
@@ -108,6 +112,7 @@
       .img-1 {
         border-radius: unset;
         width: 100%;
+        height: unset;
       }
 
       &__buttons {
@@ -159,7 +164,7 @@
         }
 
         &--length {
-          width: 72px;
+          width: 80px;
           height: 30px;
 
           span {
