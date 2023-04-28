@@ -207,7 +207,21 @@
         flex-wrap: wrap;
         align-items: center;
         align-items: flex-start;
-        justify-content: space-around;
+        justify-content: space-evenly;
+        // grid-template-columns: 1fr 1fr;
+        // grid-column-gap: 0rem;
+        // align-items: flex-start;
+        // justify-items: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .full__cast {
+    &__container {
+      &__inner {
+        //justify-content: space-between;
         // grid-template-columns: 1fr 1fr;
         // grid-column-gap: 0rem;
         // align-items: flex-start;
